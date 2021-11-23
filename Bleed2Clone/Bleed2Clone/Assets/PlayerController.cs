@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
     public int ExtraJumps;
     int jumpsLeft;
     public float Dashtime;
-    float DashtimeCounter;
+    public float DashDuration;
     Vector2 direction;
+    public bool isdashing;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,16 +38,27 @@ public class PlayerController : MonoBehaviour
             if (isGrounded == true)
             {
                 jumpsLeft = ExtraJumps;
+                isdashing = false;
+                DashDuration = 0;
                 Jump();
             }
-            else if (jumpsLeft > 0)
+        }
+        if (jumpsLeft > 0 && isGrounded == false)
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
             {
-                DashtimeCounter = Dashtime;
-                jumpsLeft--;
-                Dash();
+                DashDuration = 0;
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (isdashing == false)
+                {
+                    jumpsLeft--;
+                    StartCoroutine(Dashing());
+                }
             }
         }
-        
+
     }
     void Movement()
     {
@@ -68,13 +80,7 @@ public class PlayerController : MonoBehaviour
 
     void Dash()
     {
-        Debug.Log("dashing");
-        if (Input.GetKey(KeyCode.Space))
-        {
-
-        }
-        rb.velocity = direction * speed;
-        //DashtimeCounter -= Time.deltaTime;
+        
     }
     void Flip()
     {
@@ -82,5 +88,21 @@ public class PlayerController : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+
+    IEnumerator Dashing(float timetowait = 0.3f)
+    {
+        DashDuration = Dashtime;
+        while (DashDuration > 0)
+        {
+            Debug.Log("suppose to dash");
+             isdashing = true;
+             yield return new WaitForSeconds(timetowait);
+             rb.velocity = direction * Dashspeed;
+             DashDuration -= timetowait;
+             rb.gravityScale = 0.0f;
+        }
+        isdashing = false;
+        rb.gravityScale = 3.0f;
     }
 }
