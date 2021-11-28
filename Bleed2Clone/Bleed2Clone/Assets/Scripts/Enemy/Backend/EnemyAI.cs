@@ -3,28 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 public interface IEnemyStateChanger
 {
-    public void SwitchState(Enemy enemy);
+    public void SwitchState(EnemyState state);
 }
-public class EnemyAI : MonoBehaviour, IEnemyStateChanger
+public class EnemyAI : IEnemyStateChanger
 {
-    public void SwitchState(Enemy enemy)
+    [SerializeField] Enemy enemy;
+    public void SwitchState(EnemyState state)
     {
-        switch (enemy.state)
+        switch (state)
         {
             case EnemyState.Created:
                 enemy.OnCreated();
                 break;
-            case EnemyState.Idle:
-                enemy.IdleBehaviour();
+            case EnemyState.PlayerNotInRange:
+                enemy.PlayerNotInRangeBehaviour();
                 break;
-            case EnemyState.Patrol:
-                enemy.PatrolBehaviour();
-                break;
-            case EnemyState.FollowPlayer:
-                enemy.FollowPlayerBehavior();
-                break;
-            case EnemyState.ShootPlayer:
-                enemy.ShootBehavior();
+            case EnemyState.PlayerInRange:
+                enemy.PlayerInRangeBehaviour();
                 break;
             case EnemyState.Death:
                 enemy.Die();

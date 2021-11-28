@@ -5,21 +5,15 @@ using UnityEngine;
 public enum EnemyState
 {
     Created,
-    Idle,
-    Patrol,
-    FollowPlayer,
-    ShootPlayer,
+    PlayerInRange,
+    PlayerNotInRange,
     Death
 }
-public abstract class Enemy : ScriptableObject
+public abstract class Enemy
 {
-    [SerializeField] EnemyAI enemyAI;
-
-    public readonly EnemyState state = EnemyState.Idle;
+    public readonly EnemyState state = EnemyState.PlayerNotInRange;
     public abstract void OnCreated();
-    public abstract void IdleBehaviour();
-    public abstract void PatrolBehaviour();
-    public abstract void FollowPlayerBehavior();
-    public abstract void ShootBehavior();
+    public abstract void PlayerInRangeBehaviour();
+    public abstract void PlayerNotInRangeBehaviour();
     public abstract void Die();
 }
