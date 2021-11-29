@@ -6,7 +6,8 @@ public class FollowingEnemy : Enemy
 {
     public override void Die()
     {
-        throw new System.NotImplementedException();
+        Destroy(enemyPrefab);
+
     }
 
     public override void OnCreated()
