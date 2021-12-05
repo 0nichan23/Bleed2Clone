@@ -1,21 +1,34 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum EnemyState
+public class Enemy : MonoBehaviour
 {
-    Created,
-    PlayerInRange,
-    PlayerNotInRange,
-    Death
-}
-public abstract class Enemy : ScriptableObject
-{
-    public readonly EnemyState state;
-    public GameObject enemyPrefab;
-    public GameObject enemyRagDoll;
-    public abstract void OnCreated();
-    public abstract void PlayerInRangeBehaviour();
-    public abstract void PlayerNotInRangeBehaviour();
-    public abstract void Die();
+    private Transform player;
+    private EnemyState _state;
+    private float hp;
+
+    public EnemyState state => _state;
+
+    internal EnemyDatabase database;
+
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerController>().gameObject.transform;
+        hp = database.MaxHP;
+    }
+    private void Update()
+    {
+        if (DistanceFromPlayer() <= database.enemyRange)
+        {
+            _state = EnemyState.PlayerInRange;
+        }
+        else
+        {
+            _state = EnemyState.PlayerNotInRange;
+        }
+    }
+    private float DistanceFromPlayer()
+    {
+        return Vector2.Distance(this.transform.position, player.position);
+    }
 }
