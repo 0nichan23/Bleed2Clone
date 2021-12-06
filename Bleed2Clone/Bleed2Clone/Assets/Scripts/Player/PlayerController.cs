@@ -7,20 +7,18 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float Dashspeed;
     public float JumpForce;
-    float MoveInput;
-    float MoveInputVer;
+    public float MoveInput;
+    public float MoveInputVer;
     bool FaceRight;
     private Rigidbody2D rb;
     public bool isGrounded;
     public Transform groundCheck;
     public float CheckRadius;
     public LayerMask whatIsGround;
-    public int ExtraJumps;
-    int jumpsLeft;
-    public float Dashtime;
-    public float DashDuration;
-    Vector2 direction;
-    public bool isdashing;
+    public Camera cam;
+    Vector3 mousePos;
+    public Transform holder;
+    public Transform gunz;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,36 +27,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, CheckRadius, whatIsGround);
-        MoveInput = Input.GetAxis("Horizontal");
-        MoveInputVer = Input.GetAxis("Vertical");
-        direction = new Vector2(MoveInput, MoveInputVer);
+        MoveInput = Input.GetAxisRaw("Horizontal");
+        MoveInputVer = Input.GetAxisRaw("Vertical");
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
+        mousePos.Normalize();
+        float rotationZ = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        holder.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         Movement();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            if (isGrounded == true)
-            {
-                jumpsLeft = ExtraJumps;
-                isdashing = false;
-                DashDuration = 0;
-                Jump();
-            }
+            Jump();
         }
-        if (jumpsLeft > 0 && isGrounded == false)
+        if (Input.GetMouseButton(0))
         {
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                DashDuration = 0;
-            }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                if (isdashing == false)
-                {
-                    jumpsLeft--;
-                    StartCoroutine(Dashing());
-                }
-            }
+            Shoot();
         }
-
     }
     void Movement()
     {
@@ -78,31 +61,18 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.up * JumpForce;   
     }
 
-    void Dash()
-    {
-        
-    }
     void Flip()
     {
-        FaceRight = !FaceRight;
-        Vector3 scaler = transform.localScale;
-        scaler.x *= -1;
-        transform.localScale = scaler;
+        /*FaceRight = !FaceRight;
+        transform.Rotate(0f, 180f, 0f); */
     }
 
-    IEnumerator Dashing(float timetowait = 0.3f)
+    void Shoot()
     {
-        DashDuration = Dashtime;
-        while (DashDuration > 0)
+        RaycastHit2D hit = Physics2D.Raycast(gunz.position, gunz.right);
+        if (hit)
         {
-            Debug.Log("suppose to dash");
-             isdashing = true;
-             yield return new WaitForSeconds(timetowait);
-             rb.velocity = direction * Dashspeed;
-             DashDuration -= timetowait;
-             rb.gravityScale = 0.0f;
+            Debug.Log(hit.transform.name);
         }
-        isdashing = false;
-        rb.gravityScale = 3.0f;
     }
 }
