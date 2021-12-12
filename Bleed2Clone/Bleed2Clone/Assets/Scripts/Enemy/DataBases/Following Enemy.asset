@@ -13,8 +13,20 @@ MonoBehaviour:
   m_Name: Following Enemy
   m_EditorClassIdentifier: 
   MaxHP: 1
-  enemyRange: 0
+  enemyRange: 6
   enemyPrefab: {fileID: 3325122294339669849, guid: 7dae4fbb775d6764aa4b3f4a0f11a385,
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}
-  activeEnemiesFromThisType: []
+  activeEnemiesFromThisType:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

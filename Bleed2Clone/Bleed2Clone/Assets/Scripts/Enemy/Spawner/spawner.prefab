@@ -43,3 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ee70a1952e7c49a72e6fb8d020534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StaticEnemiesAmount: 0
+  FlyingEnemiesAmount: 0
+  FollowingEnemiesAmount: 0
+  staticEnemyDatabase: {fileID: 11400000, guid: da2e0a3b504ff2d49afb26ee01826931,
+    type: 2}
+  flyingEnemyDatabase: {fileID: 11400000, guid: 39073968e0dc4ee4a889fc9b446f3ffe,
+    type: 2}
+  followingEnemyDatabase: {fileID: 11400000, guid: f691aa79bf75c3b4f9eb36510eb5d3da,
+    type: 2}
