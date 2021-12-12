@@ -34,5 +34,6 @@ public abstract class EnemyDatabase : ScriptableObject
         Enemy enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity).GetComponent<Enemy>();
         enemy.database = this;
         activeEnemiesFromThisType.Add(enemy);
+        enemy.database.OnCreated(enemy);
     }
 }

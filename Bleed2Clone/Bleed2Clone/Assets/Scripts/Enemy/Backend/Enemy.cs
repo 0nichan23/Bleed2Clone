@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private Transform player;
-    private EnemyState _state;
+    private EnemyState _state = EnemyState.Created;
     private float hp;
 
     public EnemyState State => _state;
@@ -17,31 +17,32 @@ public class Enemy : MonoBehaviour
             player = FindObjectOfType<PlayerController>().gameObject.transform;
 
         hp = database.MaxHP;
+
     }
     private void Update()
     {
-        if (player != null && DistanceFromPlayer() <= database.enemyRange)
-        {
-            _state = EnemyState.PlayerInRange;
-        }
-        else
-        {
-            _state = EnemyState.PlayerNotInRange;
-        }
+        if (player != null)
+            if (DistanceFromPlayer() <= database.enemyRange)
+            {
+                SwitchState(EnemyState.PlayerInRange);
+            }
+            else
+            {
+                SwitchState(EnemyState.PlayerNotInRange);
+            }
     }
     private float DistanceFromPlayer()
     {
         return Vector2.Distance(this.transform.position, player.position);
     }
-    public void SwitchState(Enemy enemy, EnemyState state)
+    public bool SwitchState(EnemyState state)
     {
-        _state = state;
+        if (state != _state)
+            _state = state;
+        else return false;
 
         switch (_state)
         {
-            case EnemyState.Created:
-                database.OnCreated(this);
-                break;
             case EnemyState.PlayerNotInRange:
                 database.PlayerNotInRangeBehaviour(this);
                 break;
@@ -52,5 +53,6 @@ public class Enemy : MonoBehaviour
                 database.OnDeath(this);
                 break;
         }
+        return true;
     }
 }
