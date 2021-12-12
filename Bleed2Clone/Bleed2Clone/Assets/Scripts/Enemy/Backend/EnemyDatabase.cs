@@ -23,7 +23,12 @@ public abstract class EnemyDatabase : ScriptableObject
     public abstract void OnCreated(Enemy enemy);
     public abstract void PlayerInRangeBehaviour(Enemy enemy);
     public abstract void PlayerNotInRangeBehaviour(Enemy enemy);
-    public abstract void OnDeath(Enemy enemy);
+    public void OnDeath(Enemy enemy)
+    {
+        activeEnemiesFromThisType.Remove(enemy);
+        GameObject corpse = Instantiate(enemyRagDoll, enemy.gameObject.transform.position, Quaternion.identity);
+        Destroy(enemy.gameObject);
+    }
     public void SpawenEnemy(Transform spawnPoint)
     {
         Enemy enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity).GetComponent<Enemy>();

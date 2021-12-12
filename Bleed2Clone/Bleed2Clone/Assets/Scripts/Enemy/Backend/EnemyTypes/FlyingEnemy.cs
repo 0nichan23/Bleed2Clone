@@ -5,11 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Flying Enemy", menuName = "Enemies/Enemy Types/Flying Enemy")]
 public class FlyingEnemy : EnemyDatabase
 {
-    public override void OnDeath(Enemy enemy)
-    {
-
-    }
-
     public override void OnCreated(Enemy enemy)
     {
 

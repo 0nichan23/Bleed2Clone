@@ -7,18 +7,20 @@ public class Enemy : MonoBehaviour
     private EnemyState _state;
     private float hp;
 
-    public EnemyState state => _state;
+    public EnemyState State => _state;
 
     internal EnemyDatabase database;
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>().gameObject.transform;
+        if (FindObjectOfType<PlayerController>())
+            player = FindObjectOfType<PlayerController>().gameObject.transform;
+
         hp = database.MaxHP;
     }
     private void Update()
     {
-        if (DistanceFromPlayer() <= database.enemyRange)
+        if (player != null && DistanceFromPlayer() <= database.enemyRange)
         {
             _state = EnemyState.PlayerInRange;
         }
@@ -30,5 +32,25 @@ public class Enemy : MonoBehaviour
     private float DistanceFromPlayer()
     {
         return Vector2.Distance(this.transform.position, player.position);
+    }
+    public void SwitchState(Enemy enemy, EnemyState state)
+    {
+        _state = state;
+
+        switch (_state)
+        {
+            case EnemyState.Created:
+                database.OnCreated(this);
+                break;
+            case EnemyState.PlayerNotInRange:
+                database.PlayerNotInRangeBehaviour(this);
+                break;
+            case EnemyState.PlayerInRange:
+                database.PlayerInRangeBehaviour(this);
+                break;
+            case EnemyState.Death:
+                database.OnDeath(this);
+                break;
+        }
     }
 }
