@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.3
-    agentHeight: 2
+    agentRadius: 0.2
+    agentHeight: 0.5
     agentSlope: 45
     agentClimb: 0.4
-    ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    ledgeDropHeight: 1
+    maxJumpAcrossDistance: 1
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -130,6 +130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1788254282268007958, guid: 328abcd1eb10bf545b84c6628faa040b,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1546519487}
     - target: {fileID: 1788254282268007959, guid: 328abcd1eb10bf545b84c6628faa040b,
         type: 3}
       propertyPath: m_RootOrder
@@ -349,6 +354,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+--- !u!4 &1546519487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4428360367144172342, guid: dee79520549eedc47a4208b89f79e978,
+    type: 3}
+  m_PrefabInstance: {fileID: 684473546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4781544325448209351
 PrefabInstance:
   m_ObjectHideFlags: 0

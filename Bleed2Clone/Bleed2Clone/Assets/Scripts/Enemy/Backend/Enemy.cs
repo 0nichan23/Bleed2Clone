@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
-    private Transform player;
+    internal Transform player;
+    internal NavMeshAgent2D agent;
     private EnemyState _state = EnemyState.Created;
     private float hp;
 
@@ -15,6 +16,8 @@ public class Enemy : MonoBehaviour
     {
         if (FindObjectOfType<PlayerController>())
             player = FindObjectOfType<PlayerController>().gameObject.transform;
+
+        agent = GetComponent<NavMeshAgent2D>();
 
         hp = database.MaxHP;
 

@@ -17,6 +17,6 @@ public class FollowingEnemy : EnemyDatabase
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)
     {
-        Debug.Log("Player Not In Range");
+        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3, enemy.player.position.y));
     }
 }
