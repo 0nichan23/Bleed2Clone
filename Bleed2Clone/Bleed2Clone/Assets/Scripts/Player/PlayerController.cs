@@ -19,16 +19,19 @@ public class PlayerController : MonoBehaviour
     Vector3 mousePos;
     public Transform holder;
     public Transform gunz;
+
+    private FloatingJoystick floatingJoystick;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        floatingJoystick = FindObjectOfType<FloatingJoystick>();
     }
 
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, CheckRadius, whatIsGround);
-        MoveInput = Input.GetAxisRaw("Horizontal");
-        MoveInputVer = Input.GetAxisRaw("Vertical");
+        MoveInput = floatingJoystick.Horizontal;
+        MoveInputVer = floatingJoystick.Vertical;
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
         mousePos.Normalize();
         float rotationZ = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
