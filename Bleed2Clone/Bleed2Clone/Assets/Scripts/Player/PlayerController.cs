@@ -16,15 +16,13 @@ public class PlayerController : MonoBehaviour
     public float CheckRadius;
     public LayerMask whatIsGround;
     public Camera cam;
-    Vector3 mousePos;
+    Vector3 directionPointed;
     public Transform holder;
-    public Transform gunz;
 
-    private FloatingJoystick floatingJoystick;
+    public FixedJoystick floatingJoystick;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        floatingJoystick = FindObjectOfType<FloatingJoystick>();
     }
 
     private void Update()
@@ -32,18 +30,14 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, CheckRadius, whatIsGround);
         MoveInput = floatingJoystick.Horizontal;
         MoveInputVer = floatingJoystick.Vertical;
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
-        mousePos.Normalize();
-        float rotationZ = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        holder.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+/*      directionPointed = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
+        directionPointed.Normalize();
+        float rotationZ = Mathf.Atan2(directionPointed.y, directionPointed.x) * Mathf.Rad2Deg;
+        holder.rotation = Quaternion.Euler(0f, 0f, rotationZ);*/
         Movement();
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && MoveInputVer > 0)
         {
             Jump();
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Shoot();
         }
     }
     void Movement()
@@ -70,12 +64,5 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0f, 180f, 0f); */
     }
 
-    void Shoot()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(gunz.position, gunz.right);
-        if (hit)
-        {
-            Debug.Log(hit.transform.name);
-        }
-    }
+    
 }
