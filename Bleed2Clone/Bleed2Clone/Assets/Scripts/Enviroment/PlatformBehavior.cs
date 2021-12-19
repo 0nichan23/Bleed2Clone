@@ -28,6 +28,8 @@ public class PlatformBehavior : MonoBehaviour
                 waitTime = 0.5f;
             }
             else waitTime -= Time.deltaTime;
+
+            //effector.surfaceArc = 0;
         }
 
         if (Input.GetKey(KeyCode.UpArrow))

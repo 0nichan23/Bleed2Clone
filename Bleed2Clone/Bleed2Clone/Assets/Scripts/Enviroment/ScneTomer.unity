@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 52938826}
   - component: {fileID: 52938831}
   - component: {fileID: 52938830}
+  - component: {fileID: 52938832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52938825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52948cffe6368d246947d828f1054f38, type: 3}
   m_Name: 
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52938825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3f954fa0d575d4449066025d06058ce, type: 3}
   m_Name: 
@@ -300,7 +301,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &52938832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52938825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1264223472f694898a1fa1e12254d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 52938831}
 --- !u!1 &112894829 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2852440606237528379, guid: 0425cb5fd2c7c2348a42eee1810cfd2a,
@@ -326,12 +340,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112894829}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b88de390249bd284e8528e83533f5053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0
+  waitTime: 0.5
 --- !u!1001 &165994988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -612,6 +626,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193521294064014295, guid: 0425cb5fd2c7c2348a42eee1810cfd2a,
+        type: 3}
+      propertyPath: m_SurfaceArc
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193521294064014295, guid: 0425cb5fd2c7c2348a42eee1810cfd2a,
+        type: 3}
+      propertyPath: m_RotationalOffset
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9008340439994235430, guid: 0425cb5fd2c7c2348a42eee1810cfd2a,
         type: 3}
