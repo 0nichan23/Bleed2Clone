@@ -194,6 +194,11 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
+      propertyPath: holder
+      value: 
+      objectReference: {fileID: 1874933713}
+    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
       propertyPath: floatingJoystick
       value: 
       objectReference: {fileID: 161866083}
@@ -623,12 +628,12 @@ PrefabInstance:
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 116
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -742,12 +747,12 @@ PrefabInstance:
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 116
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -774,6 +779,12 @@ PrefabInstance:
 --- !u!1 &1874933712 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2994117197383194998, guid: dee79520549eedc47a4208b89f79e978,
+    type: 3}
+  m_PrefabInstance: {fileID: 418060614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1874933713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8379890257611567173, guid: dee79520549eedc47a4208b89f79e978,
     type: 3}
   m_PrefabInstance: {fileID: 418060614}
   m_PrefabAsset: {fileID: 0}
