@@ -123,7 +123,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 8a2a00b50814f684e81b92846de3edfd, type: 2}
 --- !u!224 &161866082 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -319,6 +319,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+--- !u!1001 &435242300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1274702599148033457, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: FlyingEnemiesAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274702599148033457, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: StaticEnemiesAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274702599148033457, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: FollowingEnemiesAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848304, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781544325600848319, guid: b116680c2eb79654380e7d40d580efff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b116680c2eb79654380e7d40d580efff, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 5804601899655960805, guid: 031bfd33585edec469b1db4c013d6651,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.44
       objectReference: {fileID: 0}
     - target: {fileID: 5804601899655960805, guid: 031bfd33585edec469b1db4c013d6651,
         type: 3}
