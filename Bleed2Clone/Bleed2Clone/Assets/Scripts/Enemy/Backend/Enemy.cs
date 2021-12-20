@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
+    public Transform weapon;
+
     internal Transform player;
     internal NavMeshAgent2D agent;
     private EnemyState _state = EnemyState.Created;
@@ -18,13 +20,13 @@ public class Enemy : MonoBehaviour
             player = FindObjectOfType<PlayerController>().gameObject.transform;
 
         agent = GetComponent<NavMeshAgent2D>();
-
+        agent.enabled = false;
         hp = database.MaxHP;
 
     }
     private void Update()
     {
-        if (player != null)
+        if (agent.enabled && player != null)
             if (DistanceFromPlayer() <= database.enemyRange)
             {
                 SwitchState(EnemyState.PlayerInRange);
@@ -57,5 +59,12 @@ public class Enemy : MonoBehaviour
                 break;
         }
         return true;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            agent.enabled = true;
+        }
     }
 }

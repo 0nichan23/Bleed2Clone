@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8379890257611567173}
+  - component: {fileID: 1874933714}
   m_Layer: 0
   m_Name: holder
   m_TagString: Untagged
@@ -23,14 +24,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2994117197383194998}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7742972, y: 1.5512221, z: 126.87874}
-  m_LocalScale: {x: -1.2017505, y: 1.5052311, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7964586208710703137}
   m_Father: {fileID: 4428360367144172342}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874933714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994117197383194998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fc68871e4feb346b06ab1703df0db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  gunz: {fileID: 7964586208710703137}
 --- !u!1 &4068180017040532857
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,13 +70,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4068180017040532857}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.00000023758997, z: -134.67874}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8379890257611567173}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &8784743193142783946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -519,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8be311b80465a49be1ab2b75b4d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 5
   Dashspeed: 15
   JumpForce: 15
   MoveInput: 0
@@ -531,7 +546,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   cam: {fileID: 0}
-  holder: {fileID: 0}
+  holder: {fileID: 8379890257611567173}
   floatingJoystick: {fileID: 0}
 --- !u!61 &4428360367144172299
 BoxCollider2D:

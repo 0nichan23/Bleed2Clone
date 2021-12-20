@@ -23,6 +23,7 @@ public abstract class EnemyDatabase : ScriptableObject
     public abstract void OnCreated(Enemy enemy);
     public abstract void PlayerInRangeBehaviour(Enemy enemy);
     public abstract void PlayerNotInRangeBehaviour(Enemy enemy);
+
     public void OnDeath(Enemy enemy)
     {
         activeEnemiesFromThisType.Remove(enemy);
