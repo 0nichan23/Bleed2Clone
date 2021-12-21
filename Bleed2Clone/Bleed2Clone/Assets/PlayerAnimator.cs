@@ -13,9 +13,9 @@ public class PlayerAnimator : MonoBehaviour
     {
         float horiVelocity = rb2d.velocity.x;
         anim.SetFloat("HoriSpeed", Mathf.Abs(horiVelocity));
-        if (horiVelocity < -0.5f)
+        if (horiVelocity < -0.5f && !SR.flipX)
             SR.flipX = true;
-        else if (horiVelocity > 0.5f)
+        else if (horiVelocity > 0.5f && SR.flipX)
             SR.flipX = false;
     }
 }
