@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct EnemySpawning
+{
+    public EnemyDatabase enemyDatabase;
+    public int amount;
+}
+
 public class SpawnerEnemy : MonoBehaviour
 {
-    public int StaticEnemiesAmount;
-    public int FlyingEnemiesAmount;
-    public int FollowingEnemiesAmount;
-
-    public StaticEnemy staticEnemyDatabase;
-    public FlyingEnemy flyingEnemyDatabase;
-    public FollowingEnemy followingEnemyDatabase;
+    [SerializeField] List<EnemySpawning> enemySpawnings;
 
     void Start()
     {
@@ -19,17 +20,20 @@ public class SpawnerEnemy : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        for (int i = 0; i < StaticEnemiesAmount; i++)
+        foreach (EnemySpawning enemySpawning in enemySpawnings)
         {
-            staticEnemyDatabase.SpawenEnemy(transform);
+            for (int i = 0; i < enemySpawning.amount; i++)
+            {
+                enemySpawning.enemyDatabase.SpawenEnemy(transform);
+            }
         }
-        for (int i = 0; i < FlyingEnemiesAmount; i++)
+    }
+    void OnApplicationQuit()
+    {
+        foreach (EnemySpawning enemySpawning in enemySpawnings)
         {
-            flyingEnemyDatabase.SpawenEnemy(transform);
-        }
-        for (int i = 0; i < FollowingEnemiesAmount; i++)
-        {
-            followingEnemyDatabase.SpawenEnemy(transform);
+            if (enemySpawning.enemyDatabase.activeEnemiesFromThisType.Count > 0)
+                enemySpawning.enemyDatabase.activeEnemiesFromThisType.Clear();
         }
     }
 }

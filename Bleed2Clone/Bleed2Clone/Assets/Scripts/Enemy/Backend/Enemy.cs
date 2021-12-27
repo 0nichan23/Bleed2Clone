@@ -7,11 +7,13 @@ public class Enemy : MonoBehaviour
 
     internal Transform player;
     internal NavMeshAgent2D agent;
+    [SerializeField] LayerMask ground;
+    [SerializeField] Transform groundCheck;
     private EnemyState _state = EnemyState.Created;
     private float hp;
-
+    internal Vector2 lastGroundedPos;
     public EnemyState State => _state;
-
+    internal bool isGrounded => IsGrounded();
     internal EnemyDatabase database;
 
     private void Start()
@@ -60,11 +62,27 @@ public class Enemy : MonoBehaviour
         }
         return true;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 7)
+        if (isGrounded)
         {
             agent.enabled = true;
         }
+    }
+
+    private bool IsGrounded()
+    {
+        Vector2 direction = Vector2.down;
+        float distance = 0.1f;
+
+        RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, direction, distance, ground);
+        if (hit.collider != null)
+        {
+            lastGroundedPos = transform.position;
+            return true;
+        }
+
+        return false;
     }
 }
