@@ -12,11 +12,11 @@ public class FlyingEnemy : EnemyDatabase
 
     public override void PlayerInRangeBehaviour(Enemy enemy)
     {
-        Debug.Log("Player In Range");
+        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3, enemy.player.position.y + 3));
     }
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)
     {
-        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3, enemy.player.position.y + 3));
+        enemy.agent.SetDestination(enemy.lastGroundedPos);
     }
 }

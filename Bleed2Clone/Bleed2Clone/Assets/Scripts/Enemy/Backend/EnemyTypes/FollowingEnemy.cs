@@ -13,19 +13,11 @@ public class FollowingEnemy : EnemyDatabase
 
     public override void PlayerInRangeBehaviour(Enemy enemy)
     {
-        if (enemy.isGrounded)
-            Debug.Log("attack");
-        else
-        {
-            enemy.agent.SetDestination(enemy.lastGroundedPos);
-        }
+        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3, enemy.player.position.y));
     }
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)
     {
-        if (enemy.isGrounded)
-            enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3, enemy.transform.position.y));
-        else
-            enemy.agent.SetDestination(enemy.lastGroundedPos);
+        enemy.agent.SetDestination(enemy.lastGroundedPos);
     }
 }

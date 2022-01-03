@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 
     internal Transform player;
     internal NavMeshAgent2D agent;
+    internal Rigidbody2D rb;
     [SerializeField] LayerMask ground;
     [SerializeField] Transform groundCheck;
     private EnemyState _state = EnemyState.Created;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
         if (FindObjectOfType<PlayerController>())
             player = FindObjectOfType<PlayerController>().gameObject.transform;
 
+        rb = GetComponent<Rigidbody2D>();
         agent = GetComponent<NavMeshAgent2D>();
         agent.enabled = false;
         hp = database.MaxHP;
