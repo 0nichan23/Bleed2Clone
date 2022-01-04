@@ -1,0 +1,414 @@
+fileFormatVersion: 2
+guid: f559f774440197e47a9b277d547a7c65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5084442985667562754
+    second: Placeholder_MC_Spritesheet_44x48_0
+  - first:
+      213: 7776153387338574947
+    second: Placeholder_MC_Spritesheet_44x48_1
+  - first:
+      213: 7960347736415088384
+    second: Placeholder_MC_Spritesheet_44x48_2
+  - first:
+      213: -1233148960806131960
+    second: Placeholder_MC_Spritesheet_44x48_3
+  - first:
+      213: -5710964585307466297
+    second: Placeholder_MC_Spritesheet_44x48_4
+  - first:
+      213: -5287903431404508810
+    second: Placeholder_MC_Spritesheet_44x48_5
+  - first:
+      213: 7719280565973852587
+    second: Placeholder_MC_Spritesheet_44x48_6
+  - first:
+      213: -5326824720358764036
+    second: Placeholder_MC_Spritesheet_44x48_7
+  - first:
+      213: -2054108128724091060
+    second: Placeholder_MC_Spritesheet_44x48_8
+  - first:
+      213: -4005835410386684898
+    second: Placeholder_MC_Spritesheet_46x50_0
+  - first:
+      213: -847775788895786590
+    second: Placeholder_MC_Spritesheet_46x50_1
+  - first:
+      213: 3293203560834222179
+    second: Placeholder_MC_Spritesheet_46x50_2
+  - first:
+      213: 9027563405743810733
+    second: Placeholder_MC_Spritesheet_46x50_3
+  - first:
+      213: 2731888937926852627
+    second: Placeholder_MC_Spritesheet_46x50_4
+  - first:
+      213: 2413469853491791520
+    second: Placeholder_MC_Spritesheet_46x50_5
+  - first:
+      213: 6992683925973720865
+    second: Placeholder_MC_Spritesheet_46x50_6
+  - first:
+      213: -7345466118568368111
+    second: Placeholder_MC_Spritesheet_46x50_7
+  - first:
+      213: 425252824758757195
+    second: Placeholder_MC_Spritesheet_46x50_8
+  - first:
+      213: 3983714926341877787
+    second: Placeholder_MC_Spritesheet_44x48withpadding_0
+  - first:
+      213: -88215110369859326
+    second: Placeholder_MC_Spritesheet_44x48withpadding_1
+  - first:
+      213: 5081564927717853064
+    second: Placeholder_MC_Spritesheet_44x48withpadding_2
+  - first:
+      213: -6839541389171713408
+    second: Placeholder_MC_Spritesheet_44x48withpadding_3
+  - first:
+      213: 4748533467293641729
+    second: Placeholder_MC_Spritesheet_44x48withpadding_4
+  - first:
+      213: 7811656293805700861
+    second: Placeholder_MC_Spritesheet_44x48withpadding_5
+  - first:
+      213: -1383045301660271322
+    second: Placeholder_MC_Spritesheet_44x48withpadding_6
+  - first:
+      213: 4533931918982983387
+    second: Placeholder_MC_Spritesheet_44x48withpadding_7
+  - first:
+      213: 5477841938053337645
+    second: Placeholder_MC_Spritesheet_44x48withpadding_8
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10770f6e9ff84730800000000000000
+      internalID: 3983714926341877787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 100
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209259213d896cef0800000000000000
+      internalID: -88215110369859326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 100
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887c4b3e068558640800000000000000
+      internalID: 5081564927717853064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a96df08511511a0800000000000000
+      internalID: -6839541389171713408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_4
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 50
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c671a970e26e140800000000000000
+      internalID: 4748533467293641729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_5
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 50
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6bbb3e204986c60800000000000000
+      internalID: 7811656293805700861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d344630af6ecce0800000000000000
+      internalID: -1383045301660271322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_7
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde29cafe03cbee30800000000000000
+      internalID: 4533931918982983387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_MC_Spritesheet_44x48withpadding_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2218654834350c40800000000000000
+      internalID: 5477841938053337645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

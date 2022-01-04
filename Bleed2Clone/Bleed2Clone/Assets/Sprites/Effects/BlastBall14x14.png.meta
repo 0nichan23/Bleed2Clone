@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: f559f774440197e47a9b277d547a7c65
+guid: 23f62d592e0634f42b8cf834ff9eb7ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5084442985667562754
-    second: Placeholder_MC_Spritesheet_44x48_0
+      213: 2580313530944617508
+    second: BlastBall14x14_0
   - first:
-      213: 7776153387338574947
-    second: Placeholder_MC_Spritesheet_44x48_1
+      213: 574186836416289503
+    second: BlastBall14x14_1
   - first:
-      213: 7960347736415088384
-    second: Placeholder_MC_Spritesheet_44x48_2
+      213: -8370884481599528361
+    second: BlastBall14x14_2
   - first:
-      213: -1233148960806131960
-    second: Placeholder_MC_Spritesheet_44x48_3
+      213: 8116066164781040099
+    second: BlastBall14x14_3
   - first:
-      213: -5710964585307466297
-    second: Placeholder_MC_Spritesheet_44x48_4
+      213: 3877200643979337151
+    second: BlastBall14x14_4
   - first:
-      213: -5287903431404508810
-    second: Placeholder_MC_Spritesheet_44x48_5
-  - first:
-      213: 7719280565973852587
-    second: Placeholder_MC_Spritesheet_44x48_6
-  - first:
-      213: -5326824720358764036
-    second: Placeholder_MC_Spritesheet_44x48_7
-  - first:
-      213: -2054108128724091060
-    second: Placeholder_MC_Spritesheet_44x48_8
+      213: 7154855474207510416
+    second: BlastBall14x14_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,190 +145,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 44
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20d0179f4f19f8640800000000000000
-      internalID: 5084442985667562754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_1
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 96
-        width: 44
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36c24435e427aeb60800000000000000
-      internalID: 7776153387338574947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_2
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 96
-        width: 44
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00f2b9d2716d87e60800000000000000
-      internalID: 7960347736415088384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 44
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 807220cbd89f2eee0800000000000000
-      internalID: -1233148960806131960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_4
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 48
-        width: 44
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c599e7b7f39eb0b0800000000000000
-      internalID: -5710964585307466297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_5
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 48
-        width: 44
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 679a09c78d79d96b0800000000000000
-      internalID: -5287903431404508810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_6
+      name: BlastBall14x14_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 44
-        height: 48
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba1a278b6c4602b60800000000000000
-      internalID: 7719280565973852587
+      spriteID: 42c761d3c7d1fc320800000000000000
+      internalID: 2580313530944617508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_7
+      name: BlastBall14x14_1
       rect:
         serializedVersion: 2
-        x: 44
+        x: 14
         y: 0
-        width: 44
-        height: 48
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf11f3ab3215316b0800000000000000
-      internalID: -5326824720358764036
+      spriteID: fda5c43b2ebe7f700800000000000000
+      internalID: 574186836416289503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_MC_Spritesheet_44x48_8
+      name: BlastBall14x14_2
       rect:
         serializedVersion: 2
-        x: 88
+        x: 28
         y: 0
-        width: 44
-        height: 48
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4f78214a875e73e0800000000000000
-      internalID: -2054108128724091060
+      spriteID: 7522e623ae4a4db80800000000000000
+      internalID: -8370884481599528361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlastBall14x14_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e147551d2f02a070800000000000000
+      internalID: 8116066164781040099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlastBall14x14_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbddd4381759ec530800000000000000
+      internalID: 3877200643979337151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlastBall14x14_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fc56f45272b4360800000000000000
+      internalID: 7154855474207510416
       vertices: []
       indices: 
       edges: []

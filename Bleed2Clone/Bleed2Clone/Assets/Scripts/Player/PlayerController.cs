@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public Transform holder;
 
     public FixedJoystick floatingJoystick;
+
+    [SerializeField] private bool usePCControls;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +33,11 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, CheckRadius, whatIsGround);
         MoveInput = floatingJoystick.Horizontal;
         MoveInputVer = floatingJoystick.Vertical;
+        if (usePCControls)
+        {
+            MoveInput = Input.GetAxisRaw("Horizontal");
+            MoveInputVer = Input.GetAxisRaw("Vertical");
+        }
 /*      directionPointed = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
         directionPointed.Normalize();
         float rotationZ = Mathf.Atan2(directionPointed.y, directionPointed.x) * Mathf.Rad2Deg;
