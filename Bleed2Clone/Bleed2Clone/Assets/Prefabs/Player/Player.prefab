@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464748159425ecc4aa3d0ce07aa3bb18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 0}
+  BulletPrefab: {fileID: 4739916843356301366, guid: 01eb9eb4a6070274c96870f120b06ab6,
+    type: 3}
   amountToPool: 20
 --- !u!1 &1076968671
 GameObject:
@@ -10216,8 +10217,9 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  AttackPoint: {fileID: 1157374700}
+  weaponTransform: {fileID: 1157374700}
   attackRange: 1
+  firePointTransform: {fileID: 1361050554}
   MeleeModeRange: 3
   EnemiesInMeleeRange: []
   CoolDownMelee: 0.5
