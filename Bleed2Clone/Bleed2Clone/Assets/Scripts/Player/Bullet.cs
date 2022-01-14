@@ -1,12 +1,17 @@
 using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] float LifeTime = 1.5f;
+    [SerializeField] float speed;
+    [SerializeField] List<int> layersIHit;
 
     Rigidbody2D rb;
-
-    Vector2 direction;
+    internal Vector2 direction;
 
     private void Awake()
     {
@@ -21,13 +26,12 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        direction = Shoot.shootVector;
-        Invoke("Disable", 1.5f);
+        Invoke("Disable", LifeTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 7)
+        if (layersIHit.Contains(collision.gameObject.layer))
         {
             Disable();
         }
@@ -36,9 +40,5 @@ public class Bullet : MonoBehaviour
     void Disable()
     {
         gameObject.SetActive(false);
-
     }
-
-
-
 }
