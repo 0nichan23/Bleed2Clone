@@ -24,7 +24,7 @@ public class FollowingEnemy : EnemyDatabase
                 Move = stepsInSeconds;
                 enemy.agent.SetMovement(false);
                 enemy.weapon.Shoot();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(cooldown);
             }
 
             enemy.agent.SetMovement(true);

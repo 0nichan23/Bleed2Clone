@@ -15,6 +15,7 @@ public abstract class EnemyDatabase : ScriptableObject
     public float MaxHP;
     public float enemyRange;
     public float stepsInSeconds = 3;
+    public float cooldown = 1;
 
     public GameObject enemyPrefab;
     public GameObject enemyRagDoll;
