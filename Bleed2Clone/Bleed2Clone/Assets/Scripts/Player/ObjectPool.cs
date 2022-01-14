@@ -4,11 +4,15 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     List<GameObject> pooledObjects = new List<GameObject>();
-    int amountToPool = 20;
+    [SerializeField] int amountToPool = 20;
 
     public GameObject BulletPrefab;
     // Start is called before the first frame update
     void Start()
+    {
+        Init();
+    }
+    public void Init()
     {
         for (int i = 0; i < amountToPool; i++)
         {
@@ -17,7 +21,6 @@ public class ObjectPool : MonoBehaviour
             pooledObjects.Add(obj);
         }
     }
-
     public GameObject GetPooledObjects()
     {
         for (int i = 0; i < pooledObjects.Count; i++)

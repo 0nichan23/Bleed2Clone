@@ -17,6 +17,6 @@ public class FlyingEnemy : EnemyDatabase
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)
     {
-        enemy.agent.SetDestination(enemy.lastGroundedPos);
+        enemy.agent.SetDestination(enemy.agent.lastGroundedPos);
     }
 }

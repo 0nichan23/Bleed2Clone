@@ -20,6 +20,7 @@ public abstract class EnemyDatabase : ScriptableObject
 
     public List<Enemy> activeEnemiesFromThisType;
 
+    public WeaponDatabase weapon;
     public abstract void OnCreated(Enemy enemy);
     public abstract void PlayerInRangeBehaviour(Enemy enemy);
     public abstract void PlayerNotInRangeBehaviour(Enemy enemy);
@@ -30,7 +31,7 @@ public abstract class EnemyDatabase : ScriptableObject
         GameObject corpse = Instantiate(enemyRagDoll, enemy.gameObject.transform.position, Quaternion.identity);
         Destroy(enemy.gameObject);
     }
-    public void SpawenEnemy(Transform spawnPoint)
+    public void SpawnEnemy(Transform spawnPoint)
     {
         Enemy enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity).GetComponent<Enemy>();
         enemy.database = this;

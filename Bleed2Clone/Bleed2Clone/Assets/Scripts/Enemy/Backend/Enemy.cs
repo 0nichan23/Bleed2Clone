@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
-    public Transform weapon;
-
+    public Transform weaponTransform;
+    internal GameObject weapon;
+    internal Agent agent;
     internal Transform player;
-    internal NavMeshAgent2D agent;
-    internal Rigidbody2D rb;
-    [SerializeField] LayerMask ground;
-    [SerializeField] Transform groundCheck;
-    private EnemyState _state = EnemyState.Created;
+
     private float hp;
-    internal Vector2 lastGroundedPos;
-    public EnemyState State => _state;
-    internal bool isGrounded => IsGrounded();
+    private Rigidbody2D rb;
+
+    private EnemyState _state = EnemyState.Created;
+
     internal EnemyDatabase database;
 
     private void Start()
@@ -23,14 +21,14 @@ public class Enemy : MonoBehaviour
             player = FindObjectOfType<PlayerController>().gameObject.transform;
 
         rb = GetComponent<Rigidbody2D>();
-        agent = GetComponent<NavMeshAgent2D>();
-        agent.enabled = false;
         hp = database.MaxHP;
+        agent = GetComponent<Agent>();
 
+        weapon = Instantiate(database.weapon.weaponPrefab, weaponTransform.position, Quaternion.identity, weaponTransform);
     }
     private void Update()
     {
-        if (agent.enabled && player != null)
+        if (player != null)
             if (DistanceFromPlayer() <= database.enemyRange)
             {
                 SwitchState(EnemyState.PlayerInRange);
@@ -67,24 +65,11 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isGrounded)
+        if (agent.IsGrounded)
         {
-            agent.enabled = true;
+            rb.isKinematic = true;
+            agent.SetDestination(agent.lastGroundedPos);
+            agent.SetMovement(true);
         }
-    }
-
-    private bool IsGrounded()
-    {
-        Vector2 direction = Vector2.down;
-        float distance = 0.1f;
-
-        RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, direction, distance, ground);
-        if (hit.collider != null)
-        {
-            lastGroundedPos = transform.position;
-            return true;
-        }
-
-        return false;
     }
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1670478343052927374}
   - component: {fileID: 892745013095720816}
-  - component: {fileID: 8699385957720514820}
   - component: {fileID: 7847330663534952762}
   - component: {fileID: 7230941196304299711}
+  - component: {fileID: 2000593222967741515}
   m_Layer: 8
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -50,31 +50,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1382179926117760397}
-  ground:
-    serializedVersion: 2
-    m_Bits: 128
-  groundCheck: {fileID: 1540262317727249578}
---- !u!114 &8699385957720514820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112179455514793105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3.5
-  _angularSpeed: 120
-  _acceleration: 8
-  _stoppingDistance: 0
-  _autoBraking: 1
-  _radius: 0.5
-  _quality: 4
-  _priority: 50
-  _autoRepath: 1
 --- !u!50 &7847330663534952762
 Rigidbody2D:
   serializedVersion: 4
@@ -122,6 +97,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.9906368}
   m_EdgeRadius: 0
+--- !u!114 &2000593222967741515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112179455514793105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04d5e49967656649b33c3340bf78c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 128
+  groundCheck: {fileID: 1540262317727249578}
 --- !u!1 &8975455753461555962
 GameObject:
   m_ObjectHideFlags: 0

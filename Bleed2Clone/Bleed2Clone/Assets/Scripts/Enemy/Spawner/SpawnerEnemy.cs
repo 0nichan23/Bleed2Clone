@@ -24,7 +24,8 @@ public class SpawnerEnemy : MonoBehaviour
         {
             for (int i = 0; i < enemySpawning.amount; i++)
             {
-                enemySpawning.enemyDatabase.SpawenEnemy(transform);
+                enemySpawning.enemyDatabase.SpawnEnemy(transform);
+                enemySpawning.enemyDatabase.weapon.Init();
             }
         }
     }
@@ -33,7 +34,10 @@ public class SpawnerEnemy : MonoBehaviour
         foreach (EnemySpawning enemySpawning in enemySpawnings)
         {
             if (enemySpawning.enemyDatabase.activeEnemiesFromThisType.Count > 0)
+            {
                 enemySpawning.enemyDatabase.activeEnemiesFromThisType.Clear();
+                enemySpawning.enemyDatabase.weapon.BulletsPool.Clear();
+            }
         }
     }
 }

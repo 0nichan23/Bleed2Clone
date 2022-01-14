@@ -13,11 +13,12 @@ public class FollowingEnemy : EnemyDatabase
 
     public override void PlayerInRangeBehaviour(Enemy enemy)
     {
-        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3, enemy.player.position.y));
+        float diff = (enemy.transform.position.x - enemy.player.position.x);
+        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.transform.position.y));
     }
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)
     {
-        enemy.agent.SetDestination(enemy.lastGroundedPos);
+        enemy.agent.SetDestination(enemy.agent.lastGroundedPos);
     }
 }
