@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
     private ObjectPool pool;
 
     private Vector3 moveVector;
-    internal static Vector2 shootVector;
+    internal Vector2 shootVector;
     #endregion
 
     private void Start()
@@ -72,6 +72,7 @@ public class Shoot : MonoBehaviour
             bullet.transform.position = firePointTransform.position;
             Bullet shot = bullet.GetComponent<Bullet>();
             bullet.SetActive(true);
+            shot.direction = shootVector;
         }
     }
 
