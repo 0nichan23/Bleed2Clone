@@ -28,7 +28,7 @@ public class SpawnerEnemy : MonoBehaviour
                 GameObject pool = Instantiate(poolPrefab);
                 pool.name = (enemySpawning.enemyDatabase.name + " Bullet Pool");
                 enemySpawning.enemyDatabase.bulletPool = pool.GetComponent<ObjectPool>();
-                enemySpawning.enemyDatabase.bulletPool.Init(enemySpawning.enemyDatabase.weaponPrefab.GetComponent<Weapon>().bulletPrefab);
+                enemySpawning.enemyDatabase.bulletPool.Init(enemySpawning.enemyDatabase.weaponPrefab.GetComponent<EnemyWeapon>().bulletPrefab);
             }
 
             for (int i = 0; i < enemySpawning.amount; i++)

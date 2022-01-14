@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     public Transform weaponTransform;
     internal GameObject weaponObject;
-    internal Weapon weapon;
+    internal EnemyWeapon weapon;
     internal Agent agent;
     internal Transform player;
 
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<Agent>();
 
         weaponObject = Instantiate(database.weaponPrefab, weaponTransform.position, Quaternion.identity, weaponTransform);
-        weapon = weaponObject.GetComponent<Weapon>();
+        weapon = weaponObject.GetComponent<EnemyWeapon>();
         weapon.enemy = this;
     }
     private void Update()
