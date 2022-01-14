@@ -15,7 +15,8 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = direction * speed;
+        Vector2 tmp = direction.normalized;
+        rb.velocity = tmp * speed;
     }
 
     private void OnEnable()
