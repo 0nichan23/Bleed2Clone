@@ -20,20 +20,9 @@ public class ObjectPool : MonoBehaviour
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }
-        pooledObjects[0].SetActive(true);
     }
     public GameObject GetPooledObjects()
     {
-        return pooledObjects.Where(x => x.activeInHierarchy).First<GameObject>();
-
-        //for (int i = 0; i < pooledObjects.Count; i++)
-        //{
-        //    if (!pooledObjects[i].activeInHierarchy)
-        //    {
-        //        return pooledObjects[i];
-        //    }
-        //}
-
-        //return null;
+        return pooledObjects.Where(x => !x.activeInHierarchy).First<GameObject>();
     }
 }
