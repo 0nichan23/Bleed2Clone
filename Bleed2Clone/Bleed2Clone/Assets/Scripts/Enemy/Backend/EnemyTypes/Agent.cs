@@ -7,9 +7,9 @@ public class Agent : MonoBehaviour
     [SerializeField] private float _speed = 10;
     [SerializeField] LayerMask ground;
     [SerializeField] Transform groundCheck;
+    [SerializeField] private bool _ignoreGround = false;
 
     private Vector3 _target;
-    private bool _ignoreGround = false;
 
     public bool Move { internal get; set; }
     public bool IsGrounded { internal get => CheckGrounded(); set { } }
