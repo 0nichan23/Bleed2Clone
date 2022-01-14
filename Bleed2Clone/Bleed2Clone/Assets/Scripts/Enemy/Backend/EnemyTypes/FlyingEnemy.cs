@@ -22,7 +22,7 @@ public class FlyingEnemy : EnemyDatabase
             else
             {
                 float diff = (enemy.transform.position.x - enemy.player.position.x);
-                enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.player.position.y + 3));
+                enemy.agent.SetDestination(new Vector2(enemy.player.position.x * Mathf.Sign(diff), enemy.player.position.y + 3));
             }
             if (Vector2.Distance(enemy.transform.position, enemy.player.position) < enemyShootRange)
             {
