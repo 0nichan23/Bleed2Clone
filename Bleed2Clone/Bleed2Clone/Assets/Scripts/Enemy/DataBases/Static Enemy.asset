@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Static Enemy
   m_EditorClassIdentifier: 
   MaxHP: 1
-  enemyRange: 7
+  enemyRange: 15
+  enemyShootRange: 7
   enemyPrefab: {fileID: 7925833976263698085, guid: d29df28d5b3108e4c96e2bec15ec821d,
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}

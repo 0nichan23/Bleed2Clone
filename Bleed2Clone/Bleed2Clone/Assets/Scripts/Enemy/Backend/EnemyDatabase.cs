@@ -14,6 +14,7 @@ public abstract class EnemyDatabase : ScriptableObject
 {
     public float MaxHP;
     public float enemyRange;
+    public float enemyShootRange;
 
     public GameObject enemyPrefab;
     public GameObject enemyRagDoll;

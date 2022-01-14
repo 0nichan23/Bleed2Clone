@@ -22,7 +22,10 @@ public class FollowingEnemy : EnemyDatabase
                 float diff = (enemy.transform.position.x - enemy.player.position.x);
                 enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.transform.position.y));
             }
-            enemy.weapon.Shoot();
+            if (Vector2.Distance(enemy.transform.position, enemy.player.position) < enemyShootRange)
+            {
+                enemy.weapon.Shoot();
+            }
             yield return null;
         }
     }
