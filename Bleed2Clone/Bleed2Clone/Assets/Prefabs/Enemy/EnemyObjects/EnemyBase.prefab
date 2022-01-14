@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1670478343052927374}
   - component: {fileID: 892745013095720816}
   - component: {fileID: 7847330663534952762}
-  - component: {fileID: 7230941196304299711}
   - component: {fileID: 2000593222967741515}
+  - component: {fileID: 1511462848090650300}
   m_Layer: 8
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -71,32 +71,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7230941196304299711
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112179455514793105}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.6846893}
-  m_EdgeRadius: 0
 --- !u!114 &2000593222967741515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +88,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   groundCheck: {fileID: 1540262317727249578}
+  _ignoreGround: 0
+--- !u!70 &1511462848090650300
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112179455514793105}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1.684689}
+  m_Direction: 0
 --- !u!1 &5323568170049144870
 GameObject:
   m_ObjectHideFlags: 0
