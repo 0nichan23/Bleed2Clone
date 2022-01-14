@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         float rotationZ = Mathf.Atan2(directionPointed.y, directionPointed.x) * Mathf.Rad2Deg;
         holder.rotation = Quaternion.Euler(0f, 0f, rotationZ);*/
         Movement();
-        if (isGrounded && MoveInputVer > 0)
+        if (isGrounded && MoveInputVer > 0.5)
         {
             Jump();
         }
