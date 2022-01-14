@@ -19,6 +19,10 @@ public class FollowingEnemy : EnemyDatabase
             enemy.weapon.Shoot();
             if (Vector2.Distance(enemy.transform.position, enemy.player.position) < 1)
             {
+                enemy.agent.SetDestination(enemy.transform.position);
+            }
+            else
+            {
                 float diff = (enemy.transform.position.x - enemy.player.position.x);
                 enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.transform.position.y));
             }
