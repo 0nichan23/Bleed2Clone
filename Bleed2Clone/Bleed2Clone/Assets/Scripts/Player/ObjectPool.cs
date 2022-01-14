@@ -3,16 +3,16 @@ using UnityEngine;
 using System.Linq;
 public class ObjectPool : MonoBehaviour
 {
-    public GameObject BulletPrefab;
+    [SerializeField] private GameObject BulletPrefab;
     public int amountToPool = 20;
-    
+
     internal List<GameObject> pooledObjects = new List<GameObject>();
 
     public void Init()
     {
         for (int i = 0; i < amountToPool; i++)
         {
-            GameObject obj = Instantiate(BulletPrefab);
+            GameObject obj = Instantiate(BulletPrefab, transform);
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }

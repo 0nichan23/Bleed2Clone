@@ -226,6 +226,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b116680c2eb79654380e7d40d580efff, type: 3}
+--- !u!4 &332560700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1361050554, guid: dee79520549eedc47a4208b89f79e978,
+    type: 3}
+  m_PrefabInstance: {fileID: 418060614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &358134151 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -239,6 +245,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 418060618, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+      propertyPath: moveJoystick
+      value: 
+      objectReference: {fileID: 161866083}
+    - target: {fileID: 418060618, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+      propertyPath: weaponTransform
+      value: 
+      objectReference: {fileID: 1032404080}
+    - target: {fileID: 418060618, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+      propertyPath: firePointTransform
+      value: 
+      objectReference: {fileID: 332560700}
     - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
       propertyPath: cam
@@ -541,6 +559,12 @@ Transform:
 --- !u!4 &769067729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4428360367144172342, guid: dee79520549eedc47a4208b89f79e978,
+    type: 3}
+  m_PrefabInstance: {fileID: 418060614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1032404080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1157374700, guid: dee79520549eedc47a4208b89f79e978,
     type: 3}
   m_PrefabInstance: {fileID: 418060614}
   m_PrefabAsset: {fileID: 0}

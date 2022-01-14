@@ -17,8 +17,6 @@ MonoBehaviour:
   enemyPrefab: {fileID: 7925833976263698085, guid: d29df28d5b3108e4c96e2bec15ec821d,
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}
-  activeEnemiesFromThisType:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  activeEnemiesFromThisType: []
+  weaponPrefab: {fileID: 1924214390370819575, guid: 24406d71ef37f364f9a14fbf338ab869,
+    type: 3}

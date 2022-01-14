@@ -73,7 +73,6 @@ public class Shoot : MonoBehaviour
             Bullet shot = bullet.GetComponent<Bullet>();
             bullet.SetActive(true);
         }
-
     }
 
     void Melee()

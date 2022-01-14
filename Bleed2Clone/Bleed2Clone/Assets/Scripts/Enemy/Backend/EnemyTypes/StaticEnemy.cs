@@ -7,12 +7,12 @@ public class StaticEnemy : EnemyDatabase
 {
     public override void OnCreated(Enemy enemy)
     {
-        Debug.Log("On Created");
+        
     }
 
     public override void PlayerInRangeBehaviour(Enemy enemy)
     {
-        Debug.Log("Player In Range");
+        enemy.weapon.Shoot();
     }
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)

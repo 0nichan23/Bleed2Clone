@@ -4,7 +4,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform weaponTransform;
-    internal GameObject weapon;
+    internal GameObject weaponObject;
+    internal Weapon weapon;
     internal Agent agent;
     internal Transform player;
 
@@ -24,7 +25,9 @@ public class Enemy : MonoBehaviour
         hp = database.MaxHP;
         agent = GetComponent<Agent>();
 
-        weapon = Instantiate(database.weapon.weaponPrefab, weaponTransform.position, Quaternion.identity, weaponTransform);
+        weaponObject = Instantiate(database.weaponPrefab, weaponTransform.position, Quaternion.identity, weaponTransform);
+        weapon = weaponObject.GetComponent<Weapon>();
+        weapon.enemy = this;
     }
     private void Update()
     {

@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ee70a1952e7c49a72e6fb8d020534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolPrefab: {fileID: 504948594332883244, guid: 26365710bcf2efa4da1af269067b5db6,
+    type: 3}
   enemySpawnings:
   - enemyDatabase: {fileID: 11400000, guid: 39073968e0dc4ee4a889fc9b446f3ffe, type: 2}
     amount: 1

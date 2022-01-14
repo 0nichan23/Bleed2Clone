@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}
   activeEnemiesFromThisType: []
+  weaponPrefab: {fileID: 1924214390370819575, guid: 24406d71ef37f364f9a14fbf338ab869,
+    type: 3}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128

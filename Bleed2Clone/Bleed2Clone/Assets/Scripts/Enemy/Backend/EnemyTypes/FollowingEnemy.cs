@@ -15,6 +15,7 @@ public class FollowingEnemy : EnemyDatabase
     {
         float diff = (enemy.transform.position.x - enemy.player.position.x);
         enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.transform.position.y));
+        enemy.weapon.Shoot();
     }
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)

@@ -20,7 +20,9 @@ public abstract class EnemyDatabase : ScriptableObject
 
     public List<Enemy> activeEnemiesFromThisType;
 
-    public WeaponDatabase weapon;
+    public GameObject weaponPrefab;
+
+    internal ObjectPool bulletPool;
     public abstract void OnCreated(Enemy enemy);
     public abstract void PlayerInRangeBehaviour(Enemy enemy);
     public abstract void PlayerNotInRangeBehaviour(Enemy enemy);

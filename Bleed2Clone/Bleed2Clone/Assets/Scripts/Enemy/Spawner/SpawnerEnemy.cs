@@ -11,6 +11,7 @@ public struct EnemySpawning
 
 public class SpawnerEnemy : MonoBehaviour
 {
+    [SerializeField] private GameObject poolPrefab;
     [SerializeField] List<EnemySpawning> enemySpawnings;
 
     void Start()
@@ -22,12 +23,21 @@ public class SpawnerEnemy : MonoBehaviour
     {
         foreach (EnemySpawning enemySpawning in enemySpawnings)
         {
+            if (!enemySpawning.enemyDatabase.bulletPool)
+            {
+                GameObject pool = Instantiate(poolPrefab);
+                pool.name = (enemySpawning.enemyDatabase.name + " Bullet Pool");
+                enemySpawning.enemyDatabase.bulletPool = pool.GetComponent<ObjectPool>();
+                enemySpawning.enemyDatabase.bulletPool.Init(enemySpawning.enemyDatabase.weaponPrefab.GetComponent<Weapon>().bulletPrefab);
+            }
+
             for (int i = 0; i < enemySpawning.amount; i++)
             {
                 enemySpawning.enemyDatabase.SpawnEnemy(transform);
             }
         }
     }
+
     void OnApplicationQuit()
     {
         foreach (EnemySpawning enemySpawning in enemySpawnings)

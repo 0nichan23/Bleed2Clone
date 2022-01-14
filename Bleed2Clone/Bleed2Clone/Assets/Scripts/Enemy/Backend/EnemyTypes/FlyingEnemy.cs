@@ -12,7 +12,9 @@ public class FlyingEnemy : EnemyDatabase
 
     public override void PlayerInRangeBehaviour(Enemy enemy)
     {
-        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3, enemy.player.position.y + 3));
+        float diff = (enemy.transform.position.x - enemy.player.position.x);
+        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.player.position.y + 3));
+        enemy.weapon.Shoot();
     }
 
     public override void PlayerNotInRangeBehaviour(Enemy enemy)
