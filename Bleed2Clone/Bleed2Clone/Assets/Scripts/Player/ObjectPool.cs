@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class ObjectPool : MonoBehaviour
 {
     List<GameObject> pooledObjects = new List<GameObject>();
@@ -23,14 +23,16 @@ public class ObjectPool : MonoBehaviour
     }
     public GameObject GetPooledObjects()
     {
-        for (int i = 0; i < pooledObjects.Count; i++)
-        {
-            if (!pooledObjects[i].activeInHierarchy)
-            {
-                return pooledObjects[i];
-            }
-        }
+        return pooledObjects.Where(x => x.activeInHierarchy).First<GameObject>();
 
-        return null;
+        //for (int i = 0; i < pooledObjects.Count; i++)
+        //{
+        //    if (!pooledObjects[i].activeInHierarchy)
+        //    {
+        //        return pooledObjects[i];
+        //    }
+        //}
+
+        //return null;
     }
 }
