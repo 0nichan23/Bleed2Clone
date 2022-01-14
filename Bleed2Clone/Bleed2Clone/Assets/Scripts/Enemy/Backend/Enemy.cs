@@ -51,13 +51,14 @@ public class Enemy : MonoBehaviour
             _state = state;
         else return false;
 
+        StopAllCoroutines();
         switch (_state)
         {
             case EnemyState.PlayerNotInRange:
-                database.PlayerNotInRangeBehaviour(this);
+               StartCoroutine(database.PlayerNotInRangeBehaviour(this));
                 break;
             case EnemyState.PlayerInRange:
-                database.PlayerInRangeBehaviour(this);
+                StartCoroutine(database.PlayerInRangeBehaviour(this));
                 break;
             case EnemyState.Death:
                 database.OnDeath(this);

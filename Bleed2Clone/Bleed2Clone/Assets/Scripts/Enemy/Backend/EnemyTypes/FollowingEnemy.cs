@@ -6,20 +6,27 @@ using UnityEngine;
 public class FollowingEnemy : EnemyDatabase
 {
     public LayerMask groundLayer;
-    public override void OnCreated(Enemy enemy)
+    public override IEnumerator OnCreated(Enemy enemy)
     {
         Debug.Log("On Created");
+        yield return null;
     }
 
-    public override void PlayerInRangeBehaviour(Enemy enemy)
+    public override IEnumerator PlayerInRangeBehaviour(Enemy enemy)
     {
-        float diff = (enemy.transform.position.x - enemy.player.position.x);
-        enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.transform.position.y));
-        enemy.weapon.Shoot();
+        while (true)
+        {
+            enemy.weapon.Shoot();
+            float diff = (enemy.transform.position.x - enemy.player.position.x);
+            enemy.agent.SetDestination(new Vector2(enemy.player.position.x + 3 * Mathf.Sign(diff), enemy.transform.position.y));
+            enemy.weapon.Shoot();
+            yield return null;
+        }
     }
 
-    public override void PlayerNotInRangeBehaviour(Enemy enemy)
+    public override IEnumerator PlayerNotInRangeBehaviour(Enemy enemy)
     {
         enemy.agent.SetDestination(enemy.agent.lastGroundedPos);
+        yield return null;
     }
 }

@@ -5,18 +5,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Static Enemy", menuName = "Enemies/Enemy Types/Static Enemy")]
 public class StaticEnemy : EnemyDatabase
 {
-    public override void OnCreated(Enemy enemy)
+    public override IEnumerator OnCreated(Enemy enemy)
     {
-        
+        yield return null;
     }
 
-    public override void PlayerInRangeBehaviour(Enemy enemy)
+    public override IEnumerator PlayerInRangeBehaviour(Enemy enemy)
     {
-        enemy.weapon.Shoot();
+        while (true)
+        {
+            enemy.weapon.Shoot();
+            yield return null;
+        }
     }
 
-    public override void PlayerNotInRangeBehaviour(Enemy enemy)
+    public override IEnumerator PlayerNotInRangeBehaviour(Enemy enemy)
     {
         Debug.Log("Player Not In Range");
+        yield return null;
     }
 }
