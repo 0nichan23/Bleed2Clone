@@ -44,11 +44,10 @@ public class Agent : MonoBehaviour
     private bool CheckGrounded()
     {
         Debug.Log("CHECKING GROUNDED");
-        Vector2 direction = Vector2.down;
-        float distance = 0.1f;
 
-        RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, direction, distance, ground);
-        if (hit.collider != null)
+        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.25f, ground);
+
+        if (isGrounded)
         {
             lastGroundedPos = new Vector3(transform.position.x, transform.position.y, 0);
             return true;
