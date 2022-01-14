@@ -14,11 +14,7 @@ public class StaticEnemy : EnemyDatabase
     {
         while (true)
         {
-            if (Vector2.Distance(enemy.transform.position, enemy.player.position) < enemyShootRange)
-            {
-                enemy.weapon.Shoot();
-            }
-            yield return null;
+            enemy.weapon.Shoot();
         }
     }
 

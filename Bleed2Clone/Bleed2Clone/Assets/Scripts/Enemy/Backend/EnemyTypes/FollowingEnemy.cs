@@ -14,9 +14,20 @@ public class FollowingEnemy : EnemyDatabase
 
     public override IEnumerator PlayerInRangeBehaviour(Enemy enemy)
     {
+        float Move = stepsInSeconds;
         while (true)
         {
-            enemy.weapon.Shoot();
+            Move -= Time.deltaTime;
+            if (Move <= 0)
+            {
+                Move = stepsInSeconds;
+                enemy.agent.SetMovement(false);
+                enemy.weapon.Shoot();
+                yield return new WaitForSeconds(0.5f);
+            }
+
+            enemy.agent.SetMovement(true);
+
             if (Vector2.Distance(enemy.transform.position, enemy.player.position) < 1)
             {
                 enemy.agent.SetDestination(enemy.transform.position);
@@ -24,10 +35,6 @@ public class FollowingEnemy : EnemyDatabase
             else
             {
                 enemy.agent.SetDestination(new Vector2(enemy.player.position.x, enemy.transform.position.y));
-            }
-            if (Vector2.Distance(enemy.transform.position, enemy.player.position) < enemyShootRange)
-            {
-                enemy.weapon.Shoot();
             }
             yield return null;
         }

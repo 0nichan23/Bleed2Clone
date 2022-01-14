@@ -13,20 +13,27 @@ public class FlyingEnemy : EnemyDatabase
 
     public override IEnumerator PlayerInRangeBehaviour(Enemy enemy)
     {
+        float Move = stepsInSeconds;
         while (true)
         {
+            Move -= Time.deltaTime;
+            if (Move <= 0)
+            {
+                Move = stepsInSeconds;
+                enemy.agent.SetMovement(false);
+                enemy.weapon.Shoot();
+                yield return new WaitForSeconds(0.5f);
+            }
+
+            enemy.agent.SetMovement(true);
+
             if (Vector2.Distance(enemy.transform.position, enemy.player.position) < 1)
             {
                 enemy.agent.SetDestination(enemy.transform.position);
             }
             else
             {
-                float diff = (enemy.transform.position.x - enemy.player.position.x);
                 enemy.agent.SetDestination(new Vector2(enemy.player.position.x, enemy.player.position.y + 3));
-            }
-            if (Vector2.Distance(enemy.transform.position, enemy.player.position) < enemyShootRange)
-            {
-                enemy.weapon.Shoot();
             }
             yield return null;
         }
