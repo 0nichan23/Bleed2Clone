@@ -21,13 +21,6 @@ public class EnemyWeapon : MonoBehaviour
     }
     public void Shoot()
     {
-        if (Time.time - lastShot < CoolDownRanged)
-        {
-            return;
-        }
-
-        lastShot = Time.time;
-
         GameObject bullet = enemy.database.bulletPool.GetPooledObjects();
 
         if (bullet != null)

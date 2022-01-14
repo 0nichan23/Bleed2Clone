@@ -15,7 +15,7 @@ public class StaticEnemy : EnemyDatabase
         while (true)
         {
             enemy.weapon.Shoot();
-            yield return null;
+            yield return new WaitForSeconds(stepsInSeconds);
         }
     }
 
