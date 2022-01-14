@@ -11,7 +11,7 @@ public class ParallaxEffect : MonoBehaviour
     [SerializeField] private float initialX;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (initialized)
         {
