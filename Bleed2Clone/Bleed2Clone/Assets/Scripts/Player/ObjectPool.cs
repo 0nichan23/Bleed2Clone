@@ -8,10 +8,6 @@ public class ObjectPool : MonoBehaviour
     
     internal List<GameObject> pooledObjects = new List<GameObject>();
 
-    public void Start()
-    {
-        Init();
-    }
     public void Init()
     {
         for (int i = 0; i < amountToPool; i++)
