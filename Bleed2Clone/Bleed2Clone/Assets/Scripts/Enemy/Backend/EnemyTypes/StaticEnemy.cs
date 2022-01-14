@@ -15,6 +15,7 @@ public class StaticEnemy : EnemyDatabase
         while (true)
         {
             enemy.weapon.Shoot();
+            yield return null;
         }
     }
 

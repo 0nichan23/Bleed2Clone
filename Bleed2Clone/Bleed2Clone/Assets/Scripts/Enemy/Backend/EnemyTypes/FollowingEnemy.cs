@@ -15,6 +15,7 @@ public class FollowingEnemy : EnemyDatabase
     public override IEnumerator PlayerInRangeBehaviour(Enemy enemy)
     {
         float Move = stepsInSeconds;
+
         while (true)
         {
             Move -= Time.deltaTime;
