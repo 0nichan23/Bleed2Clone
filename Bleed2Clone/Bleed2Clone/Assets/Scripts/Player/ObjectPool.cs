@@ -20,6 +20,7 @@ public class ObjectPool : MonoBehaviour
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }
+        pooledObjects[0].SetActive(true);
     }
     public GameObject GetPooledObjects()
     {
