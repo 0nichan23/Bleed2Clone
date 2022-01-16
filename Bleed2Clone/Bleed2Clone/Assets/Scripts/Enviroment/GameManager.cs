@@ -20,16 +20,18 @@ public sealed class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if ((Vector2.Distance(player.transform.position, endLevelPoint.position) <= 3) || CheckIfAlllEnemiesDead())
-        {
-            wonTheGame = true;
-            EndGame();
-        }
         if (player == null)
         {
             wonTheGame = false;
             EndGame();
         }
+        else
+        if ((Vector2.Distance(player.transform.position, endLevelPoint.position) <= 3) || CheckIfAlllEnemiesDead())
+        {
+            wonTheGame = true;
+            EndGame();
+        }
+
     }
     public void EndGame()
     {
