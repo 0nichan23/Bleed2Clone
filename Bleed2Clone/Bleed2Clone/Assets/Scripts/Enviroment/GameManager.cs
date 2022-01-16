@@ -1,42 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public sealed class GameManager : MonoBehaviour
 {
-    private static GameManager gameManager;
-    private static object lockThis = new object();
+    [SerializeField] private GameObject EndGamePrefab;
+    [SerializeField] private TMP_Text endGameText;
+    [SerializeField] private Transform endLevelPoint;
+    [SerializeField] private GameObject joystickCanvas;
+    private PlayerController player;
+    private List<EnemyDatabase> enemyDatabases;
 
-    public PlayerController playerController;
-
-    public EnemyDatabase enemyDatabase;
-    public FollowingEnemy followingEnemy;
-    public FlyingEnemy flyingEnemy;
-
-
-
-   
+    bool wonTheGame;
 
     private void Start()
     {
-        static GameManager GetGameManager()
-        {
-            lock (lockThis)
-            {
-                if (gameManager == null)
-                    gameManager = new GameManager();
-            }
-            return gameManager;
-        }
-        GetGameManager();
+        player = FindObjectOfType<PlayerController>();
     }
-    
-    [SerializeField] private PlayerController player;
+    private void Update()
+    {
+        if ((Vector2.Distance(player.transform.position, endLevelPoint.position) <= 3) || CheckIfAlllEnemiesDead())
+        {
+            wonTheGame = true;
+            EndGame();
+        }
+        if (player == null)
+        {
+            wonTheGame = false;
+            EndGame();
+        }
+    }
+    public void EndGame()
+    {
+        Time.timeScale = 0;
+        joystickCanvas.SetActive(false);
+        EndGamePrefab.SetActive(true);
 
-    [SerializeField] private int currentScene;
-    [SerializeField] private int difficultyLevel;
-
-    [SerializeField] private GameObject[] spawners;
-    [SerializeField] private GameObject[] platforms;
-    [SerializeField] private GameObject[] exitPoint;
+        if (wonTheGame)
+            endGameText.text = "You Won!";
+        else
+            endGameText.text = "You Lost.";
+    }
+    public bool CheckIfAlllEnemiesDead()
+    {
+        foreach (var database in enemyDatabases)
+        {
+            if (database.activeEnemiesFromThisType.Count > 0)
+                return false;
+        }
+        return true;
+    }
 }

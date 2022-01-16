@@ -76,4 +76,8 @@ public class Enemy : MonoBehaviour
             agent.SetMovement(true);
         }
     }
+    private void OnDestroy()
+    {
+        database.activeEnemiesFromThisType.Remove(this);
+    }
 }
