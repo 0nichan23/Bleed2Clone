@@ -26,6 +26,7 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] private GameObject defaultArm;
     [SerializeField] private GameObject shootArm;
+    [SerializeField] private Transform playerGFX; //using this to check if the player is flipped
 
     #region backend properties
     private float lastStrike;
@@ -111,9 +112,7 @@ public class Shoot : MonoBehaviour
 
         SetArmAngle();
 
-        yield return new WaitForSeconds(0.4f);
-
-        SetArmAngle();
+        yield return new WaitForSeconds(0.3f);
 
         shootArm.SetActive(false);
         defaultArm.SetActive(true);
@@ -122,9 +121,8 @@ public class Shoot : MonoBehaviour
 
     private void SetArmAngle()
     {
-        float angle = Vector2.Angle(Vector2.right, moveJoystick.Direction);
-        if (moveJoystick.Direction.y < 0) angle *= -1;
-        shootArm.transform.rotation = Quaternion.Euler(Vector3.zero);
+        float xScale = Mathf.Sign(playerGFX.localScale.x);
+        float angle = Vector2.SignedAngle(new Vector2(xScale, 0), moveJoystick.Direction);
         shootArm.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 

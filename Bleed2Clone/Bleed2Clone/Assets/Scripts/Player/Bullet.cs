@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] List<int> layersIHit;
     ApplyDamage applyDamage;
+    private float lifetimeTimer;
 
     Rigidbody2D rb;
     internal Vector2 direction;
@@ -26,9 +27,21 @@ public class Bullet : MonoBehaviour
         rb.velocity = tmp * speed;
     }
 
+    private void Update()
+    {
+        lifetimeTimer -= Time.deltaTime;
+
+        if(lifetimeTimer <= 0)
+        {
+            Disable();
+        }
+    }
+
     private void OnEnable()
     {
-        Invoke("Disable", LifeTime);
+        // Invoke("Disable", LifeTime); This will cause bullets that were disabled and enabled to dissapear prematurely
+        //Switching to timer that resets on OnEnable()
+        lifetimeTimer = LifeTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
