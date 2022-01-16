@@ -17765,12 +17765,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!212 &1447502804 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 512234648, guid: dee79520549eedc47a4208b89f79e978,
-    type: 3}
-  m_PrefabInstance: {fileID: 2011655731}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1477425788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19348,108 +19342,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 150051453, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 247269299, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 247269300, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 405028596, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 405028597, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 405028597, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.685
-      objectReference: {fileID: 0}
-    - target: {fileID: 405028597, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.192875
-      objectReference: {fileID: 0}
     - target: {fileID: 418060618, guid: dee79520549eedc47a4208b89f79e978, type: 3}
       propertyPath: moveJoystick
       value: 
       objectReference: {fileID: 358134152}
-    - target: {fileID: 512234648, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 512234648, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 512234648, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 512234648, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 539056906, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 539056907, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1227717966, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1227717966, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1364905932, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: SR
-      value: 
-      objectReference: {fileID: 1447502804}
-    - target: {fileID: 1364905933, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054627686, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054627687, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054627688, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106771752, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106771753, guid: dee79520549eedc47a4208b89f79e978, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
-        type: 3}
-      propertyPath: usePCControls
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
       propertyPath: floatingJoystick
