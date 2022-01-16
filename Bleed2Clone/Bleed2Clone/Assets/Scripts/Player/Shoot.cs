@@ -75,6 +75,7 @@ public class Shoot : MonoBehaviour
 
         if (bullet != null)
         {
+            StopCoroutine(ShootAnimation());
             StartCoroutine(ShootAnimation());
             bullet.transform.position = firePointTransform.position;
             Bullet shot = bullet.GetComponent<Bullet>();
@@ -108,16 +109,23 @@ public class Shoot : MonoBehaviour
         shootArm.SetActive(true);
         defaultArm.SetActive(false);
 
-        float angle = Vector2.Angle(Vector2.right, moveJoystick.Direction);
-        if (moveJoystick.Vertical < 0) angle *= -1;
-        shootArm.transform.rotation = Quaternion.Euler(Vector3.zero);
-        shootArm.transform.rotation = Quaternion.Euler(0, 0, angle);
+        SetArmAngle();
 
         yield return new WaitForSeconds(0.4f);
+
+        SetArmAngle();
 
         shootArm.SetActive(false);
         defaultArm.SetActive(true);
 
+    }
+
+    private void SetArmAngle()
+    {
+        float angle = Vector2.Angle(Vector2.right, moveJoystick.Direction);
+        if (moveJoystick.Direction.y < 0) angle *= -1;
+        shootArm.transform.rotation = Quaternion.Euler(Vector3.zero);
+        shootArm.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
 }

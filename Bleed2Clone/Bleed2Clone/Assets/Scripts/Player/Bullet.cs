@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
         Invoke("Disable", LifeTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         print(name + " Collides with" + collision.gameObject.name);
         if (layersIHit.Contains(collision.gameObject.layer))
@@ -42,6 +42,7 @@ public class Bullet : MonoBehaviour
             Disable();
         }
     }
+
 
     void Disable()
     {
