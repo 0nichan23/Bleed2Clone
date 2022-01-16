@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Following Enemy
   m_EditorClassIdentifier: 
   MaxHP: 1
-  enemyRange: 7
+  enemyRange: 50
   stepsInSeconds: 0.5
   cooldown: 1
   enemyPrefab: {fileID: 3325122294339669849, guid: 7dae4fbb775d6764aa4b3f4a0f11a385,
