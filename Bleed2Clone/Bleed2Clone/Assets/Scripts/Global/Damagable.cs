@@ -19,12 +19,4 @@ public class Damagable : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public float GetCurrentHP()
-    {
-        return currentHp;
-    }
-    public float GetMaxHP()
-    {
-        return maxHp;
-    }
 }
