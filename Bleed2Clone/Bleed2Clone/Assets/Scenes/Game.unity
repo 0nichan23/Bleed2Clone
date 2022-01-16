@@ -73253,6 +73253,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1364905932, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+      propertyPath: shootJoystick
+      value: 
+      objectReference: {fileID: 358134152}
     - target: {fileID: 1693232984, guid: dee79520549eedc47a4208b89f79e978, type: 3}
       propertyPath: m_Layer
       value: 0

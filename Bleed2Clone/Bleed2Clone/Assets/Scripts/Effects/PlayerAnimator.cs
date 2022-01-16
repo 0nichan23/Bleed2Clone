@@ -7,7 +7,9 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private SpriteRenderer[] SR;
     [SerializeField] private Transform gfxParent;
+    [SerializeField] private Sprite[] headDirections;
     [SerializeField] private Animator anim;
+    [SerializeField] private FixedJoystick shootJoystick;
     private float flippedSign;
     private bool isGrounded;
 
@@ -44,6 +46,36 @@ public class PlayerAnimator : MonoBehaviour
         if (changedFlip)
         {
             gfxParent.localScale = new Vector3(flippedSign, 1, 1);
+        }
+
+        if(shootJoystick.Direction != Vector2.zero) //if there's input in the shoot joystick
+        {
+           
+            //SR[0] should be the head-GFX
+            //Match the flip to where the the look direction
+
+            if(gfxParent.localScale.x > 0) //If the body is facing to the right (1 in X scale)
+                SR[0].flipX = (shootJoystick.Horizontal < 0) ? true : false;  //Return according to stick direction
+            else //If the body is facing to the left (-1 in X scale)
+                SR[0].flipX = (shootJoystick.Horizontal > 0) ? true : false; //Do the same but in reverse to match the -1
+
+            //Match the sprite to the direction
+
+            // will return a value between 0 and 180 depending on the aim. (EX. up = 0, down = 180, left/right = 90)
+            float angle = Vector2.Angle(Vector2.up, shootJoystick.Direction);
+            //There are 5 head directions and 180 degrees, we give each head-direction an equal range
+            float rangePerHeadDir = 180 / 5;
+
+            //Round up (ceil = round-up) the current angle divided by the range per head to get the index of which head we need to pick now;
+            int currentFace = Mathf.CeilToInt(angle / rangePerHeadDir);
+
+            //Set the correct head
+            SR[0].sprite = headDirections[currentFace - 1];
+        }
+        else //If there isn't any input currently
+        {
+            SR[0].sprite = headDirections[2];
+            SR[0].flipX = false;
         }
     }
 

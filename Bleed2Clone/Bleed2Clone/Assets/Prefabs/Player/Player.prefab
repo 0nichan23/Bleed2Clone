@@ -187,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405028596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.685, y: 1.192875, z: 0}
+  m_LocalPosition: {x: 0.051, y: 1.256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 512234647}
@@ -10634,15 +10634,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3983714926341877787, guid: f559f774440197e47a9b277d547a7c65,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.75, y: 1.75}
+  m_Size: {x: 1.4375, y: 1.5625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2994117197383194998
@@ -10875,7 +10876,14 @@ MonoBehaviour:
   - {fileID: 247269300}
   - {fileID: 539056907}
   gfxParent: {fileID: 150051454}
+  headDirections:
+  - {fileID: -6250234420594893959, guid: 9747ccccc098ad7478268f90e06dff2f, type: 3}
+  - {fileID: 3795057672666166832, guid: 9747ccccc098ad7478268f90e06dff2f, type: 3}
+  - {fileID: -6369292166245285741, guid: 9747ccccc098ad7478268f90e06dff2f, type: 3}
+  - {fileID: 1273650659776764200, guid: 9747ccccc098ad7478268f90e06dff2f, type: 3}
+  - {fileID: -1901201251066439533, guid: 9747ccccc098ad7478268f90e06dff2f, type: 3}
   anim: {fileID: 1364905933}
+  shootJoystick: {fileID: 0}
 --- !u!114 &2668187310168951583
 MonoBehaviour:
   m_ObjectHideFlags: 0
