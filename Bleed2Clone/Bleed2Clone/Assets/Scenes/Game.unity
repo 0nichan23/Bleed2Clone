@@ -72813,6 +72813,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
+      propertyPath: usePCControls
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
       propertyPath: floatingJoystick
       value: 
       objectReference: {fileID: 161866083}
