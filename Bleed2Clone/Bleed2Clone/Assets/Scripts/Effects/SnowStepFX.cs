@@ -43,7 +43,7 @@ public class SnowStepFX : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             jumpParticles.Play();
         }

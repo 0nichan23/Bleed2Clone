@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Shoot : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class Shoot : MonoBehaviour
     [Header("Cooldown")]
     [SerializeField] private float CoolDownMelee;
     [SerializeField] private float CoolDownRanged;
+
+    [Header("Arms")]
+
+    [SerializeField] private GameObject defaultArm;
+    [SerializeField] private GameObject shootArm;
 
     #region backend properties
     private float lastStrike;
@@ -69,8 +75,10 @@ public class Shoot : MonoBehaviour
 
         if (bullet != null)
         {
+            StartCoroutine(ShootAnimation());
             bullet.transform.position = firePointTransform.position;
             Bullet shot = bullet.GetComponent<Bullet>();
+            bullet.transform.parent = null;
             bullet.SetActive(true);
             shot.direction = shootVector;
         }
@@ -94,4 +102,23 @@ public class Shoot : MonoBehaviour
         Gizmos.DrawWireSphere(weaponTransform.position, attackRange);
         Gizmos.DrawWireSphere(transform.position, MeleeModeRange);
     }
+
+    private IEnumerator ShootAnimation()
+    {
+        shootArm.SetActive(true);
+        defaultArm.SetActive(false);
+
+        float angle = Vector2.Angle(Vector2.right, moveJoystick.Direction);
+        if (moveJoystick.Vertical < 0) angle *= -1;
+        shootArm.transform.rotation = Quaternion.Euler(Vector3.zero);
+        shootArm.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        yield return new WaitForSeconds(0.4f);
+
+        shootArm.SetActive(false);
+        defaultArm.SetActive(true);
+
+    }
+
 }
+
