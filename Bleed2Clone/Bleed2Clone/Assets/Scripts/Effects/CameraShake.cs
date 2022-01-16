@@ -15,6 +15,11 @@ public class CameraShake : MonoBehaviour
         noise = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
+    private void OnDisable()
+    {
+        GameEvents.OnCameraShakeEvent -= ShakeCamera;
+    }
+
     // Update is called once per frame
     void Update()
     {

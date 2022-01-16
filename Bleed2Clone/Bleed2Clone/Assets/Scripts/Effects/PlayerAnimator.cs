@@ -14,6 +14,11 @@ public class PlayerAnimator : MonoBehaviour
         GameEvents.OnPlayerGroundedEvent += UpdateIsGrounded;
     }
 
+    private void OnDisable()
+    {
+        GameEvents.OnPlayerGroundedEvent -= UpdateIsGrounded;
+    }
+
     // Update is called once per frame
     void Update()
     {

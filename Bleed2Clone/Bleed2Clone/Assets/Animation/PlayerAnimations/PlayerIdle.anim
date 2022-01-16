@@ -1,0 +1,457 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerIdle
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.015, y: 1.193125, z: 0}
+        inSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.083333336
+        value: {x: -0.015, y: 1.224375, z: 0}
+        inSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.16666667
+        value: {x: -0.015, y: 1.224375, z: 0}
+        inSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.25
+        value: {x: -0.015, y: 1.193125, z: 0}
+        inSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: -0.015, y: 1.193125, z: 0}
+        inSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.41666666
+        value: {x: -0.015, y: 1.193125, z: 0}
+        inSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: PlayerGFX/HeadHolder
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 2344584483502071886, guid: 47b665a601010f941a409322a82fb685,
+        type: 3}
+    - time: 0.083333336
+      value: {fileID: 9060188503275976629, guid: 47b665a601010f941a409322a82fb685,
+        type: 3}
+    - time: 0.16666667
+      value: {fileID: 1781272637219471128, guid: 47b665a601010f941a409322a82fb685,
+        type: 3}
+    - time: 0.25
+      value: {fileID: 3936801370487730389, guid: 47b665a601010f941a409322a82fb685,
+        type: 3}
+    - time: 0.33333334
+      value: {fileID: 3644919241659559823, guid: 47b665a601010f941a409322a82fb685,
+        type: 3}
+    - time: 0.41666666
+      value: {fileID: -1707740240458817573, guid: 47b665a601010f941a409322a82fb685,
+        type: 3}
+    attribute: m_Sprite
+    path: PlayerGFX/HairGFX
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 8012600059013606571, guid: 26369e8b0f3c7cd4d8427bd68bec6e68,
+        type: 3}
+    - time: 0.083333336
+      value: {fileID: 1404372487734389970, guid: 26369e8b0f3c7cd4d8427bd68bec6e68,
+        type: 3}
+    - time: 0.16666667
+      value: {fileID: -707164955937500326, guid: 26369e8b0f3c7cd4d8427bd68bec6e68,
+        type: 3}
+    - time: 0.25
+      value: {fileID: 1071726138311572379, guid: 26369e8b0f3c7cd4d8427bd68bec6e68,
+        type: 3}
+    - time: 0.33333334
+      value: {fileID: -2083903688170464338, guid: 26369e8b0f3c7cd4d8427bd68bec6e68,
+        type: 3}
+    - time: 0.41666666
+      value: {fileID: -82361249518439040, guid: 26369e8b0f3c7cd4d8427bd68bec6e68,
+        type: 3}
+    attribute: m_Sprite
+    path: PlayerGFX/ArmGFX
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 8390570215960034321, guid: 7c7d26446a27a704e9ae5c0c937926f9,
+        type: 3}
+    - time: 0.083333336
+      value: {fileID: -9074444808695647121, guid: 7c7d26446a27a704e9ae5c0c937926f9,
+        type: 3}
+    - time: 0.16666667
+      value: {fileID: -7926955123120070824, guid: 7c7d26446a27a704e9ae5c0c937926f9,
+        type: 3}
+    - time: 0.25
+      value: {fileID: 7449772938033561865, guid: 7c7d26446a27a704e9ae5c0c937926f9,
+        type: 3}
+    - time: 0.33333334
+      value: {fileID: 7858070467516423052, guid: 7c7d26446a27a704e9ae5c0c937926f9,
+        type: 3}
+    - time: 0.41666666
+      value: {fileID: -5828610019003952707, guid: 7c7d26446a27a704e9ae5c0c937926f9,
+        type: 3}
+    attribute: m_Sprite
+    path: PlayerGFX/HeadPositionReference
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: -9057735870007727969, guid: 1342d3fc4f0685a42a3a0f77726d7757,
+        type: 3}
+    - time: 0.083333336
+      value: {fileID: -1790317311676532989, guid: 1342d3fc4f0685a42a3a0f77726d7757,
+        type: 3}
+    - time: 0.16666667
+      value: {fileID: -3939419454390581089, guid: 1342d3fc4f0685a42a3a0f77726d7757,
+        type: 3}
+    - time: 0.25
+      value: {fileID: 8507065602210800031, guid: 1342d3fc4f0685a42a3a0f77726d7757,
+        type: 3}
+    - time: 0.33333334
+      value: {fileID: 7016670188429285274, guid: 1342d3fc4f0685a42a3a0f77726d7757,
+        type: 3}
+    - time: 0.41666666
+      value: {fileID: 8665563461037386025, guid: 1342d3fc4f0685a42a3a0f77726d7757,
+        type: 3}
+    attribute: m_Sprite
+    path: PlayerGFX/MainGFX
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 12
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 1059051190
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2883530630
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1340190661
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 623997879
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3811108870
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 2344584483502071886, guid: 47b665a601010f941a409322a82fb685, type: 3}
+    - {fileID: 9060188503275976629, guid: 47b665a601010f941a409322a82fb685, type: 3}
+    - {fileID: 1781272637219471128, guid: 47b665a601010f941a409322a82fb685, type: 3}
+    - {fileID: 3936801370487730389, guid: 47b665a601010f941a409322a82fb685, type: 3}
+    - {fileID: 3644919241659559823, guid: 47b665a601010f941a409322a82fb685, type: 3}
+    - {fileID: -1707740240458817573, guid: 47b665a601010f941a409322a82fb685, type: 3}
+    - {fileID: 8012600059013606571, guid: 26369e8b0f3c7cd4d8427bd68bec6e68, type: 3}
+    - {fileID: 1404372487734389970, guid: 26369e8b0f3c7cd4d8427bd68bec6e68, type: 3}
+    - {fileID: -707164955937500326, guid: 26369e8b0f3c7cd4d8427bd68bec6e68, type: 3}
+    - {fileID: 1071726138311572379, guid: 26369e8b0f3c7cd4d8427bd68bec6e68, type: 3}
+    - {fileID: -2083903688170464338, guid: 26369e8b0f3c7cd4d8427bd68bec6e68, type: 3}
+    - {fileID: -82361249518439040, guid: 26369e8b0f3c7cd4d8427bd68bec6e68, type: 3}
+    - {fileID: 8390570215960034321, guid: 7c7d26446a27a704e9ae5c0c937926f9, type: 3}
+    - {fileID: -9074444808695647121, guid: 7c7d26446a27a704e9ae5c0c937926f9, type: 3}
+    - {fileID: -7926955123120070824, guid: 7c7d26446a27a704e9ae5c0c937926f9, type: 3}
+    - {fileID: 7449772938033561865, guid: 7c7d26446a27a704e9ae5c0c937926f9, type: 3}
+    - {fileID: 7858070467516423052, guid: 7c7d26446a27a704e9ae5c0c937926f9, type: 3}
+    - {fileID: -5828610019003952707, guid: 7c7d26446a27a704e9ae5c0c937926f9, type: 3}
+    - {fileID: -9057735870007727969, guid: 1342d3fc4f0685a42a3a0f77726d7757, type: 3}
+    - {fileID: -1790317311676532989, guid: 1342d3fc4f0685a42a3a0f77726d7757, type: 3}
+    - {fileID: -3939419454390581089, guid: 1342d3fc4f0685a42a3a0f77726d7757, type: 3}
+    - {fileID: 8507065602210800031, guid: 1342d3fc4f0685a42a3a0f77726d7757, type: 3}
+    - {fileID: 7016670188429285274, guid: 1342d3fc4f0685a42a3a0f77726d7757, type: 3}
+    - {fileID: 8665563461037386025, guid: 1342d3fc4f0685a42a3a0f77726d7757, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.5
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.015
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.083333336
+        value: -0.015
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: -0.015
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.25
+        value: -0.015
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.33333334
+        value: -0.015
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.41666666
+        value: -0.015
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: PlayerGFX/HeadHolder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.193125
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 1.224375
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 1.224375
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.25
+        value: 1.193125
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.33333334
+        value: 1.193125
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.41666666
+        value: 1.193125
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: PlayerGFX/HeadHolder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.25
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.33333334
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.41666666
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: PlayerGFX/HeadHolder
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []

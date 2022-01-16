@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        print(name + " Collides with" + collision.gameObject.name);
         if (layersIHit.Contains(collision.gameObject.layer))
         {
             if (collision.gameObject.GetComponent<Damagable>())
