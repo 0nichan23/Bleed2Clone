@@ -29,6 +29,7 @@ public class EnemyWeapon : MonoBehaviour
         if (bullet != null)
         {
             bullet.transform.position = firePointTransform.position;
+            bullet.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, shootVector) - 90f);
             Bullet shot = bullet.GetComponent<Bullet>();
             bullet.SetActive(true);
             shot.direction = shootVector;
