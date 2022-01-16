@@ -50,7 +50,7 @@ public class PlayerAnimator : MonoBehaviour
 
         if(shootJoystick.Direction != Vector2.zero) //if there's input in the shoot joystick
         {
-           
+            anim.SetBool("IsShooting", true); //Set the shooting bool for the standing-throw animation;           
             //SR[0] should be the head-GFX
             //Match the flip to where the the look direction
 
@@ -76,6 +76,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             SR[0].sprite = headDirections[2];
             SR[0].flipX = false;
+            anim.SetBool("IsShooting", false);
         }
     }
 
