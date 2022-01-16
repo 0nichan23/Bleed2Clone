@@ -7,15 +7,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
-  m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
+  m_Name: PlayerOutlineMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 24a232f2433bb374fb01ee74e6ee796f,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -107,6 +107,7 @@ Material:
     - _Metallic: 0
     - _Mode: 1
     - _OcclusionStrength: 1
+    - _OnylShowOutlines: 1
     - _OutlinePixelSize: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
