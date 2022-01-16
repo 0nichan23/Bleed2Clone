@@ -11,12 +11,12 @@ public class HealthBar : MonoBehaviour
     {
         healthBarSlider = transform.GetChild(0).GetComponentInChildren<Slider>();
         damagable= GetComponentInParent<Damagable>();
-        healthBarSlider.maxValue = damagable.GetMaxHP();
+        //healthBarSlider.maxValue = damagable.GetMaxHP();
 
     }
     private void Update()
     {
-        healthBarSlider.value = damagable.GetCurrentHP();
+        //healthBarSlider.value = damagable.GetCurrentHP();
     }
 
 }
