@@ -10268,6 +10268,7 @@ GameObject:
   - component: {fileID: 1364905938}
   - component: {fileID: 1364905933}
   - component: {fileID: 1364905932}
+  - component: {fileID: 2668187310168951583}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -10392,6 +10393,19 @@ MonoBehaviour:
   rb2d: {fileID: 4428360367144172296}
   SR: {fileID: 1227717968}
   anim: {fileID: 1364905933}
+--- !u!114 &2668187310168951583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428360367144172301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1269436b1050142a3d5b6d62d35165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 20
 --- !u!1 &8729510541208746046
 GameObject:
   m_ObjectHideFlags: 0
@@ -15498,15 +15512,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d322315ce83f6f044ad36ff3345e7341, type: 3}
---- !u!198 &1533572525 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6627464208697269617, guid: d322315ce83f6f044ad36ff3345e7341,
-    type: 3}
-  m_PrefabInstance: {fileID: 6627464210197276892}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1533572527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6627464208697269619, guid: d322315ce83f6f044ad36ff3345e7341,
+    type: 3}
+  m_PrefabInstance: {fileID: 6627464210197276892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1533572525 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6627464208697269617, guid: d322315ce83f6f044ad36ff3345e7341,
     type: 3}
   m_PrefabInstance: {fileID: 6627464210197276892}
   m_PrefabAsset: {fileID: 0}

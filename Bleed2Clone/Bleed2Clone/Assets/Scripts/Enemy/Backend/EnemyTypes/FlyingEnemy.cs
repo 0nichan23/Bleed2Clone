@@ -16,6 +16,11 @@ public class FlyingEnemy : EnemyDatabase
         float Move = stepsInSeconds;
         while (true)
         {
+            if (enemy.player == null)
+            {
+                yield return null;
+            }
+
             Move -= Time.deltaTime;
             if (Move <= 0)
             {
@@ -27,11 +32,11 @@ public class FlyingEnemy : EnemyDatabase
 
             enemy.agent.SetMovement(true);
 
-            if (Vector2.Distance(enemy.transform.position, enemy.player.position) < 1)
+            if (enemy.player != null && Vector2.Distance(enemy.transform.position, enemy.player.position) < 1)
             {
                 enemy.agent.SetDestination(enemy.transform.position);
             }
-            else
+            else if (enemy.player != null)
             {
                 enemy.agent.SetDestination(new Vector2(enemy.player.position.x, enemy.player.position.y + 3));
             }

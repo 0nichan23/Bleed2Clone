@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float LifeTime = 1.5f;
     [SerializeField] float speed;
     [SerializeField] List<int> layersIHit;
+    ApplyDamage applyDamage;
 
     Rigidbody2D rb;
     internal Vector2 direction;
@@ -16,6 +17,7 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        applyDamage = GetComponent<ApplyDamage>();
     }
 
     private void FixedUpdate()
@@ -33,6 +35,9 @@ public class Bullet : MonoBehaviour
     {
         if (layersIHit.Contains(collision.gameObject.layer))
         {
+            if (collision.gameObject.GetComponent<Damagable>())
+                applyDamage.ApplyDamageToDamagable(collision.gameObject.GetComponent<Damagable>());
+
             Disable();
         }
     }

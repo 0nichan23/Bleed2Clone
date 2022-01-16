@@ -16,8 +16,11 @@ public class EnemyWeapon : MonoBehaviour
     #endregion
     private void Update()
     {
-        shootVector = (enemy.player.transform.position- enemy.transform.position);
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
+        if (enemy.player != null)
+        {
+            shootVector = (enemy.player.transform.position - enemy.transform.position);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
+        }
     }
     public void Shoot()
     {
