@@ -33,7 +33,7 @@ public abstract class EnemyDatabase : ScriptableObject
     {
         activeEnemiesFromThisType.Remove(enemy);
         GameObject corpse = Instantiate(enemyRagDoll, enemy.gameObject.transform.position, Quaternion.identity);
-        Destroy(enemy.gameObject);
+        enemy.gameObject.SetActive(false);
     }
     public void SpawnEnemy(Transform spawnPoint)
     {

@@ -10,25 +10,28 @@ public class Damagable : MonoBehaviour
     [Header("Hit Effect")]
 
     [SerializeField] private bool onHitEffect;
-    [SerializeField] private SpriteRenderer graphics;
+    [SerializeField] private Transform gfxTransform;
+    [SerializeField] private SpriteRenderer[] SRs;
     private Color myColor;
 
     private void Start()
     {
         currentHp = maxHp;
-        myColor = graphics.color;
+        myColor = SRs[0].color;
     }
     public void TakeDamage(float howMuch)
     {
         currentHp -= howMuch;
         if (currentHp <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
-
-        if (onHitEffect) StartCoroutine(DoEffect());
+        else
+             if (onHitEffect) StartCoroutine(DoEffect());
 
     }
+
     public float GetCurrentHP()
     {
         return currentHp;
@@ -40,20 +43,28 @@ public class Damagable : MonoBehaviour
 
     private IEnumerator DoEffect()
     {
-        graphics.transform.localScale = new Vector3(0.8f, 1.2f, 1f);
+        gfxTransform.localScale = new Vector3(0.8f, 1.2f, 1f);
         Color currentColor = myColor;
-        graphics.color = Color.red;
+
+        foreach (SpriteRenderer sr in SRs)
+            sr.color = Color.red;
+
         float lerpAmount = 0f;
+        Color startingColor = Color.red;
+        Vector3 startingScale = gfxTransform.localScale;
 
         while (lerpAmount < 1f)
         {
-            lerpAmount += (0.1f * Time.deltaTime);
-            if (lerpAmount > 1f) lerpAmount = 1f;
-            graphics.transform.localScale = Vector3.Lerp(graphics.transform.localScale, Vector3.one, lerpAmount);
-            graphics.color = Color.Lerp(graphics.color, currentColor, lerpAmount);
+            lerpAmount += 2f * Time.deltaTime;
+            print("lerp amount: " + lerpAmount);
+            gfxTransform.localScale = Vector3.Lerp(startingScale, Vector3.one, lerpAmount);
+
+            foreach (SpriteRenderer sr in SRs)
+                sr.color = Color.Lerp(startingColor, currentColor, lerpAmount);
 
             yield return null;
         }
 
+        print("finished on hit effect");
     }
 }

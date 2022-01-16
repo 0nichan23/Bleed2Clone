@@ -11054,7 +11054,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 20
   onHitEffect: 1
-  graphics: {fileID: 0}
+  gfxTransform: {fileID: 150051454}
+  SRs:
+  - {fileID: 512234648}
+  - {fileID: 2106771753}
+  - {fileID: 247269300}
+  - {fileID: 539056907}
 --- !u!1 &8729510541208746046
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,12 +15,15 @@ public class EnemyDeathParticle : MonoBehaviour
 
     private void OnEnable()
     {
-        myParticles.SetActive(false);
+        myParticles?.SetActive(false);
     }
 
     private void OnDisable()
     {
-        myParticles.transform.position = transform.position;
-        myParticles.SetActive(true);
+        if(transform != null && myParticles != null)
+        {
+            myParticles.transform.position = transform.position;
+            myParticles.SetActive(true);
+        }
     }
 }

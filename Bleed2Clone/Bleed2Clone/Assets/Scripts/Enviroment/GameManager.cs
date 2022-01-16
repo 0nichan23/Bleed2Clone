@@ -21,7 +21,7 @@ public sealed class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (player == null)
+        if (!player.isActiveAndEnabled)
         {
             wonTheGame = false;
             EndGame();

@@ -43,7 +43,6 @@ public class Agent : MonoBehaviour
     }
     private bool CheckGrounded()
     {
-        Debug.Log("CHECKING GROUNDED");
 
         bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.25f, ground);
 

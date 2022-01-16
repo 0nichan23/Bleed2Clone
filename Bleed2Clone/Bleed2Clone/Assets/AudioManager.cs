@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = intro;
         audioSource.Play();
-        yield return new WaitForSeconds(intro.length);
+        yield return new WaitForSeconds(intro.length-1);
         audioSource.clip = gameLoop;
         audioSource.loop = true;
         audioSource.Play();

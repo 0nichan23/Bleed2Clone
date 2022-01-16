@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27259461f13a35544a037b19e9baaf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 1.5
+  LifeTime: 2.5
   speed: 5
   layersIHit: 0700000006000000
 --- !u!212 &3618008715896596300

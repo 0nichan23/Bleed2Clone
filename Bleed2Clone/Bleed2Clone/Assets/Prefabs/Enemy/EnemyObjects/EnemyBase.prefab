@@ -142,7 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   onHitEffect: 1
-  graphics: {fileID: 272476786010330791}
+  gfxTransform: {fileID: 7961227611738200581}
+  SRs:
+  - {fileID: 272476786010330791}
 --- !u!95 &2705932718069788577
 Animator:
   serializedVersion: 3
