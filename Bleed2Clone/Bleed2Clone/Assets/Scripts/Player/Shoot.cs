@@ -50,14 +50,14 @@ public class Shoot : MonoBehaviour
         if (moveJoystick.Horizontal != 0 || moveJoystick.Vertical != 0)
         {
             transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
-            if (EnemiesInMeleeRange.Length > 0)
-            {
-                Melee();
-            }
-            else
-            {
+            //if (EnemiesInMeleeRange.Length > 0)
+            //{
+            //    Melee();
+            //}
+            //else
+            //{
                 Pew();
-            }
+          //  }
         }
 
     }
