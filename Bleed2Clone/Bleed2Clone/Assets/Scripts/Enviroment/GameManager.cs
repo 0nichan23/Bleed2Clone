@@ -9,8 +9,9 @@ public sealed class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text endGameText;
     [SerializeField] private Transform endLevelPoint;
     [SerializeField] private GameObject joystickCanvas;
+    [SerializeField] private List<EnemyDatabase> enemyDatabases;
+
     private PlayerController player;
-    private List<EnemyDatabase> enemyDatabases;
 
     bool wonTheGame;
 

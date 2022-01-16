@@ -1853,6 +1853,10 @@ MonoBehaviour:
   endGameText: {fileID: 1591226550}
   endLevelPoint: {fileID: 925343927}
   joystickCanvas: {fileID: 2128746470}
+  enemyDatabases:
+  - {fileID: 11400000, guid: 39073968e0dc4ee4a889fc9b446f3ffe, type: 2}
+  - {fileID: 11400000, guid: f691aa79bf75c3b4f9eb36510eb5d3da, type: 2}
+  - {fileID: 11400000, guid: da2e0a3b504ff2d49afb26ee01826931, type: 2}
 --- !u!4 &824419475
 Transform:
   m_ObjectHideFlags: 0
