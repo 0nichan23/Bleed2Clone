@@ -56,7 +56,7 @@ public class Damagable : MonoBehaviour
         while (lerpAmount < 1f)
         {
             lerpAmount += 2f * Time.deltaTime;
-            print("lerp amount: " + lerpAmount);
+            //print("lerp amount: " + lerpAmount);
             gfxTransform.localScale = Vector3.Lerp(startingScale, Vector3.one, lerpAmount);
 
             foreach (SpriteRenderer sr in SRs)
@@ -65,6 +65,6 @@ public class Damagable : MonoBehaviour
             yield return null;
         }
 
-        print("finished on hit effect");
+        //print("finished on hit effect");
     }
 }

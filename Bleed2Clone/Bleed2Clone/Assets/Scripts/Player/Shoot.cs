@@ -69,7 +69,6 @@ public class Shoot : MonoBehaviour
         {
             return;
         }
-
         lastShot = Time.time;
 
         GameObject bullet = pool.GetPooledObjects();

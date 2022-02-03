@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -18,6 +17,15 @@ public class PlayerController : MonoBehaviour
     public Camera cam;
     Vector3 directionPointed;
     public Transform holder;
+    public int ExtraJumps;
+    int jumpsLeft;
+    public float jumpCd;
+    float lastJump;
+    public float DashForce;
+    public float DashCd;
+    float lastDash;
+    bool isDashing;
+    public float DashDuration;
 
     public FixedJoystick floatingJoystick;
 
@@ -26,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        jumpsLeft = ExtraJumps;
     }
 
     private void Update()
@@ -38,14 +47,25 @@ public class PlayerController : MonoBehaviour
             MoveInput = Input.GetAxisRaw("Horizontal");
             MoveInputVer = Input.GetAxisRaw("Vertical");
         }
-/*      directionPointed = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
-        directionPointed.Normalize();
-        float rotationZ = Mathf.Atan2(directionPointed.y, directionPointed.x) * Mathf.Rad2Deg;
-        holder.rotation = Quaternion.Euler(0f, 0f, rotationZ);*/
-        Movement();
-        if (isGrounded && MoveInputVer > 0.5)
+        /*      directionPointed = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
+                directionPointed.Normalize();
+                float rotationZ = Mathf.Atan2(directionPointed.y, directionPointed.x) * Mathf.Rad2Deg;
+                holder.rotation = Quaternion.Euler(0f, 0f, rotationZ);*/
+        if (!isDashing)
         {
-            Jump();
+            Movement();
+            if (MoveInputVer > 0.6 && jumpsLeft > 0)
+            {
+                Jump();
+            }
+        }
+        if (isGrounded)
+        {
+            jumpsLeft = ExtraJumps;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            CheckIfCanDash();
         }
     }
     void Movement()
@@ -60,10 +80,39 @@ public class PlayerController : MonoBehaviour
         }
         rb.velocity = new Vector2(MoveInput * speed, rb.velocity.y);
     }
+    void CheckIfCanDash()
+    {
+        if (Time.time - lastDash <= DashCd)
+        {
+            return;
+        }
+        lastDash = Time.time;
+        StartCoroutine(Dash());
+    }
+
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        rb.velocity = new Vector2(MoveInput, MoveInputVer);
+        Vector2 direction = new Vector2(MoveInput, MoveInputVer);
+        rb.AddForce(direction * DashForce, ForceMode2D.Impulse);
+        float gravity = rb.gravityScale;
+        rb.gravityScale = 0;
+        yield return new WaitForSeconds(DashDuration);
+        isDashing = false;
+        rb.gravityScale = gravity;
+    }
 
     void Jump()
     {
-        rb.velocity = Vector2.up * JumpForce;   
+        if (Time.time - lastJump <= jumpCd)
+        {
+            return;
+        }
+        lastJump = Time.time;
+        rb.velocity = Vector2.up * JumpForce;
+        jumpsLeft--;
+        Debug.Log(jumpsLeft);
     }
 
     void Flip()
@@ -72,5 +121,5 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0f, 180f, 0f); */
     }
 
-    
+
 }

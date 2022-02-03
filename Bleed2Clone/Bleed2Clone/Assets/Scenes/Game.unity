@@ -73618,6 +73618,11 @@ PrefabInstance:
       propertyPath: graphics
       value: 
       objectReference: {fileID: 733398641}
+    - target: {fileID: 2668187310168951583, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2743361953431950733, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -73635,8 +73640,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
+      propertyPath: DashCd
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
+      propertyPath: jumpCd
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
+      propertyPath: DashForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
+      propertyPath: ExtraJumps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
+      propertyPath: DashDuration
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+        type: 3}
       propertyPath: usePCControls
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
         type: 3}
