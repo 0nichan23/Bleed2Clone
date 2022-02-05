@@ -10,6 +10,11 @@ public class ParallaxEffect : MonoBehaviour
     [SerializeField] private bool initialized;
     [SerializeField] private float initialX;
 
+    private void Start()
+    {
+        initialX -= camTrans.position.x * paraAmount;
+    }
+
     // Update is called once per frame
     void LateUpdate()
     {

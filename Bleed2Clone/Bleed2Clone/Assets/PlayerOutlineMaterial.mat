@@ -107,7 +107,7 @@ Material:
     - _Metallic: 0
     - _Mode: 1
     - _OcclusionStrength: 1
-    - _OnylShowOutlines: 0
+    - _OnylShowOutlines: 1
     - _OutlinePixelSize: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
