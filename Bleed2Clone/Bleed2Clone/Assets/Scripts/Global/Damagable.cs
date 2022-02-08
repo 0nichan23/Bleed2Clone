@@ -24,8 +24,12 @@ public class Damagable : MonoBehaviour
         currentHp -= howMuch;
         if (currentHp <= 0)
         {
-            //Destroy(gameObject);
-            gameObject.SetActive(false);
+            if (GetComponent<PlayerController>() != null)
+            {
+                transform.position = new Vector2(PlayerPrefs.GetFloat("saveX"), PlayerPrefs.GetFloat("saveY"));
+            }
+            else
+                gameObject.SetActive(false);
         }
         else
              if (onHitEffect) StartCoroutine(DoEffect());
@@ -36,6 +40,12 @@ public class Damagable : MonoBehaviour
     {
         return currentHp;
     }
+
+    public void Heal()
+    {
+        currentHp = maxHp;
+    }
+
     public float GetMaxHP()
     {
         return maxHp;

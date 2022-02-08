@@ -3,38 +3,55 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody2D rb;
+    bool FaceRight;
+
+    [Header("Movement")]
     public float speed;
-    public float Dashspeed;
     public float JumpForce;
+
+    [Header("Inputs")]
     public float MoveInput;
     public float MoveInputVer;
-    bool FaceRight;
-    private Rigidbody2D rb;
+
+    [Header("Collisions")]
     public bool isGrounded;
     public Transform groundCheck;
     public float CheckRadius;
     public LayerMask whatIsGround;
+
+    [Header("Variables")]
     public Camera cam;
-    Vector3 directionPointed;
     public Transform holder;
+    
+    [Header("Jump")]
     public int ExtraJumps;
-    int jumpsLeft;
+    public int jumpsLeft;
     public float jumpCd;
+
     float lastJump;
+
+    [Header("Dash")]
+    public float Dashspeed;
     public float DashForce;
     public float DashCd;
-    float lastDash;
-    bool isDashing;
     public float DashDuration;
 
-    public FixedJoystick floatingJoystick;
+    float lastDash;
+    bool isDashing;
 
-    [SerializeField] private bool usePCControls;
+    [Header("Controls")]
+    public FixedJoystick floatingJoystick;
+    public bool usePCControls;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         jumpsLeft = ExtraJumps;
+
+        // first save
+        PlayerPrefs.SetFloat("saveX", transform.position.x);
+        PlayerPrefs.SetFloat("saveY", transform.position.y);
     }
 
     private void Update()

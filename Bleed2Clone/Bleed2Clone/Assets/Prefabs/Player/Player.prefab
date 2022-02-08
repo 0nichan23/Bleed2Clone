@@ -10886,6 +10886,7 @@ GameObject:
   - component: {fileID: 1364905933}
   - component: {fileID: 1364905932}
   - component: {fileID: 2668187310168951583}
+  - component: {fileID: 2011655733}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -10960,6 +10961,12 @@ MonoBehaviour:
     m_Bits: 128
   cam: {fileID: 0}
   holder: {fileID: 8379890257611567173}
+  ExtraJumps: 1
+  jumpsLeft: 0
+  jumpCd: 0.5
+  DashForce: 10
+  DashCd: 2
+  DashDuration: 0.4
   floatingJoystick: {fileID: 0}
   usePCControls: 1
 --- !u!70 &5177856170169555705
@@ -11060,6 +11067,23 @@ MonoBehaviour:
   - {fileID: 2106771753}
   - {fileID: 247269300}
   - {fileID: 539056907}
+--- !u!114 &2011655733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428360367144172301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8dde665766881469b103cacca30c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformCollider: {fileID: 0}
+  playerCollider: {fileID: 1364905938}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &8729510541208746046
 GameObject:
   m_ObjectHideFlags: 0
