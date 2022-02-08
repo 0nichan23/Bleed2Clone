@@ -31,6 +31,10 @@ public class SlowTime : MonoBehaviour
         {
             Time.timeScale = TimeScale;
             curTime -= Time.deltaTime;
+            if (curTime <= 0)
+            {
+                stopSlowingTime();
+            }
         }
         else
         {
