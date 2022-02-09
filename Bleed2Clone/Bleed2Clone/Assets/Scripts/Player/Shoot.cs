@@ -42,7 +42,7 @@ public class Shoot : MonoBehaviour
         {
             if (playerController.usePCControls)
             {
-                return Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+                return (Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position).normalized;
             }
             else
             {
