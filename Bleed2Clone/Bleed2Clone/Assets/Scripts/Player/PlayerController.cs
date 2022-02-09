@@ -126,11 +126,11 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Time.time - lastJump <= jumpCd)
-        {
-            return;
-        }
-        lastJump = Time.time;
+        //if (Time.time - lastJump <= jumpCd)
+        //{
+        //    return;
+        //}
+        //lastJump = Time.time;
         rb.velocity = Vector2.up * JumpForce;
         jumpsLeft--;
         Debug.Log(jumpsLeft);
