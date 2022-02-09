@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeTime: 3
   speed: 10
-  layersIHit: 0700000008000000
+  layersIHit: 08000000
 --- !u!61 &1796671439714865067
 BoxCollider2D:
   m_ObjectHideFlags: 0

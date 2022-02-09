@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeTime: 2.5
   speed: 5
-  layersIHit: 0700000006000000
+  layersIHit: 06000000
 --- !u!212 &3618008715896596300
 SpriteRenderer:
   m_ObjectHideFlags: 0
