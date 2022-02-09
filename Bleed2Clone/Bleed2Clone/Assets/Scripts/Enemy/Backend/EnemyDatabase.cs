@@ -38,6 +38,7 @@ public abstract class EnemyDatabase : ScriptableObject
     public void SpawnEnemy(Transform spawnPoint)
     {
         Enemy enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity).GetComponent<Enemy>();
+        enemy.gameObject.GetComponent<Damagable>().SetMaxHP(MaxHP);
         enemy.database = this;
         activeEnemiesFromThisType.Add(enemy);
         enemy.database.OnCreated(enemy);

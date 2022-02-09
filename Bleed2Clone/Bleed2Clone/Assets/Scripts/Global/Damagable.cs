@@ -51,6 +51,11 @@ public class Damagable : MonoBehaviour
         return maxHp;
     }
 
+    public void SetMaxHP(float _maxHP)
+    {
+        maxHp = _maxHP;
+    }
+
     private IEnumerator DoEffect()
     {
         gfxTransform.localScale = new Vector3(0.8f, 1.2f, 1f);

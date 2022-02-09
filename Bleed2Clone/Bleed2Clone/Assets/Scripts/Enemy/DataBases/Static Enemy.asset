@@ -15,7 +15,7 @@ MonoBehaviour:
   MaxHP: 1
   enemyRange: 50
   stepsInSeconds: 3
-  cooldown: 1
+  cooldown: 3
   enemyPrefab: {fileID: 7925833976263698085, guid: d29df28d5b3108e4c96e2bec15ec821d,
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}
