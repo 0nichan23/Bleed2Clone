@@ -43,4 +43,10 @@ public abstract class EnemyDatabase : ScriptableObject
         activeEnemiesFromThisType.Add(enemy);
         enemy.database.OnCreated(enemy);
     }
+
+    public bool isDestinationInGround(Enemy enemy,Vector3 destination)
+    {
+        Vector3 direction = destination - enemy.transform.position;
+        return Physics.Raycast(enemy.transform.position, direction, LayerMask.NameToLayer("Ground"));
+    }
 }

@@ -36,7 +36,7 @@ public class FlyingEnemy : EnemyDatabase
             {
                 enemy.agent.SetDestination(enemy.transform.position);
             }
-            else if (enemy.player != null)
+            else if (enemy.player != null && !isDestinationInGround(enemy, new Vector2(enemy.player.position.x, enemy.player.position.y + 3)))
             {
                 enemy.agent.SetDestination(new Vector2(enemy.player.position.x, enemy.player.position.y + 3));
             }
