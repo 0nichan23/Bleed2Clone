@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     public FixedJoystick floatingJoystick;
     public bool usePCControls;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,10 +65,6 @@ public class PlayerController : MonoBehaviour
             MoveInput = Input.GetAxisRaw("Horizontal");
             MoveInputVer = Input.GetAxisRaw("Vertical");
         }
-        /*      directionPointed = cam.ScreenToWorldPoint(Input.mousePosition) - holder.position;
-                directionPointed.Normalize();
-                float rotationZ = Mathf.Atan2(directionPointed.y, directionPointed.x) * Mathf.Rad2Deg;
-                holder.rotation = Quaternion.Euler(0f, 0f, rotationZ);*/
         if (!isDashing)
         {
             Movement();
@@ -85,6 +82,7 @@ public class PlayerController : MonoBehaviour
             CheckIfCanDash();
         }
     }
+
     void Movement()
     {
         if (FaceRight == false && MoveInput < 0)
