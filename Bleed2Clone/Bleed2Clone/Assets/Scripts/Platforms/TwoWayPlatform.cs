@@ -4,25 +4,37 @@ using System.Linq;
 using UnityEngine;
 public class TwoWayPlatform : MonoBehaviour
 {
-    [SerializeField] CompositeCollider2D platformCollider;
-    [SerializeField] CapsuleCollider2D playerCollider;
-    [SerializeField] LayerMask layerMask;
+    private PlatformEffector2D effector;
+    [SerializeField] float waitTime =0.5f;
+    float _waitTime;
+    private void Start()
+    {
+        effector = GetComponent<PlatformEffector2D>();
+    }
+
     private void Update()
     {
-        // if the player holds shift make the platforms not collidable
-        if (Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
-            platformCollider.isTrigger = true;
+            _waitTime = waitTime;
         }
-        // if player is outside a collider we can make the platforms collidable again
-        else if (!Physics2D.OverlapCapsule(playerCollider.bounds.center, playerCollider.size, playerCollider.direction, 0, layerMask))
+
+        if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            platformCollider.isTrigger = false;
+            if (_waitTime <= 0)
+            {
+                effector.rotationalOffset = 180f;
+                _waitTime = waitTime;
+            }
+            else
+            {
+                _waitTime -= Time.deltaTime;
+            }
         }
-        // if player stuck inside a platform release him
-        if (Physics2D.OverlapCapsule(playerCollider.bounds.center, playerCollider.size / 2, playerCollider.direction, 0, layerMask))
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            platformCollider.isTrigger = true;
+            effector.rotationalOffset = 0;
         }
     }
 }
