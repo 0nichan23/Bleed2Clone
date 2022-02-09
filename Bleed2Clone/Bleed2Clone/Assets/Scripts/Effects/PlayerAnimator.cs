@@ -10,13 +10,20 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Sprite[] headDirections;
     [SerializeField] private Animator anim;
     [SerializeField] private FixedJoystick shootJoystick;
+    [SerializeField] private PlayerController playerController;
+    private Shoot shoot;
     private float flippedSign;
     private bool isGrounded;
+    private bool isShootInput => playerController.usePCControls? Input.GetMouseButton(0) : Input.touchCount > 0;
+    [SerializeField] private bool boolshit;
+
 
     private void Start()
     {
         GameEvents.OnPlayerGroundedEvent += UpdateIsGrounded;
         flippedSign = 1f;
+        //if (playerController == null) GetComponent<PlayerController>();
+        shoot = FindObjectOfType<Shoot>();
     }
 
     private void OnDisable()
@@ -27,6 +34,7 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        boolshit = isShootInput;
         bool changedFlip = false;
         float horiVelocity = rb2d.velocity.x;
         float vertiVelocity = rb2d.velocity.y;
@@ -48,21 +56,21 @@ public class PlayerAnimator : MonoBehaviour
             gfxParent.localScale = new Vector3(flippedSign, 1, 1);
         }
 
-        if(shootJoystick.Direction != Vector2.zero) //if there's input in the shoot joystick
+        if(isShootInput) //if there's input in the shoot joystick
         {
             anim.SetBool("IsShooting", true); //Set the shooting bool for the standing-throw animation;           
             //SR[0] should be the head-GFX
             //Match the flip to where the the look direction
 
             if(gfxParent.localScale.x > 0) //If the body is facing to the right (1 in X scale)
-                SR[0].flipX = (shootJoystick.Horizontal < 0) ? true : false;  //Return according to stick direction
+                SR[0].flipX = (shoot.shootVector.x < 0) ? true : false;  //Return according to stick direction
             else //If the body is facing to the left (-1 in X scale)
-                SR[0].flipX = (shootJoystick.Horizontal > 0) ? true : false; //Do the same but in reverse to match the -1
+                SR[0].flipX = (shoot.shootVector.x > 0) ? true : false; //Do the same but in reverse to match the -1
 
             //Match the sprite to the direction
 
             // will return a value between 0 and 180 depending on the aim. (EX. up = 0, down = 180, left/right = 90)
-            float angle = Vector2.Angle(Vector2.up, shootJoystick.Direction);
+            float angle = Vector2.Angle(Vector2.up, shoot.shootVector);
             //There are 5 head directions and 180 degrees, we give each head-direction an equal range
             float rangePerHeadDir = 180 / 5;
 

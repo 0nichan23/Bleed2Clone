@@ -5704,6 +5704,18 @@ MonoBehaviour:
   curTime: 0
   TimeScale: 0.5
   Bar: {fileID: 1334525849}
+--- !u!114 &314731776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4428360367144172298, guid: dee79520549eedc47a4208b89f79e978,
+    type: 3}
+  m_PrefabInstance: {fileID: 2011655731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314731769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8be311b80465a49be1ab2b75b4d6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &333615223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88023,6 +88035,10 @@ PrefabInstance:
       propertyPath: shootJoystick
       value: 
       objectReference: {fileID: 358134152}
+    - target: {fileID: 1364905932, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 314731776}
     - target: {fileID: 2011655733, guid: dee79520549eedc47a4208b89f79e978, type: 3}
       propertyPath: platformCollider
       value: 

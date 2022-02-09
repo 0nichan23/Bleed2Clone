@@ -12,6 +12,7 @@ public class SnowStepFX : MonoBehaviour
     [SerializeField] private Transform fxPos;
     [SerializeField] private Color frontParticleColor;
     [SerializeField] private Color backParticleColor;
+    [SerializeField] private bool useCameraShake;
     private bool particleColorSwitch; //A constantly changing bool that helps change the leg particle's color
     private bool isRunning;
     private bool isFlipped;
@@ -69,12 +70,12 @@ public class SnowStepFX : MonoBehaviour
         {
             IsGrounded = true;
             landParticles.Play();
-            GameEvents.OnCameraShake(2, 2, 0.2f);
+            if(useCameraShake) GameEvents.OnCameraShake(2, 2, 0.2f);
         }
 
         if(!grounded && isGrounded)
         {
-            GameEvents.OnCameraShake(2, 2, 0.2f);
+            if(useCameraShake) GameEvents.OnCameraShake(2, 2, 0.2f);
         }
 
         IsGrounded = grounded;
