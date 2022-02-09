@@ -68,10 +68,16 @@ public class PlayerController : MonoBehaviour
         if (!isDashing)
         {
             Movement();
-            if (MoveInputVer > 0.6 && jumpsLeft > 0)
+
+            if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpsLeft>0)
             {
                 Jump();
             }
+
+            //if (MoveInputVer > 0.6 && jumpsLeft > 0)
+            //{
+            //    Jump();
+            //}
         }
         if (isGrounded)
         {
