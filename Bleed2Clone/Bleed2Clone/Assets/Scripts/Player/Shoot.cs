@@ -27,6 +27,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject defaultArm;
     [SerializeField] private GameObject shootArm;
     [SerializeField] private Transform playerGFX; //using this to check if the player is flipped
+    PlayerController playerController;
 
     #region backend properties
     private float lastStrike;
@@ -35,17 +36,30 @@ public class Shoot : MonoBehaviour
     private ObjectPool pool;
 
     private Vector3 moveVector;
-    internal Vector2 shootVector;
+    internal Vector2 shootVector
+    {
+        get
+        {
+            if (playerController.usePCControls)
+            {
+                return Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+            }
+            else
+            {
+                return (Vector2.up * moveJoystick.Vertical - Vector2.left * moveJoystick.Horizontal);
+            }
+        }
+    }
     #endregion
 
     private void Start()
     {
         pool = GetComponentInChildren<ObjectPool>();
         pool.Init();
+        playerController = FindObjectOfType<PlayerController>();
     }
     private void Update()
     {
-        shootVector = (Vector2.up * moveJoystick.Vertical - Vector2.left * moveJoystick.Horizontal);
         EnemiesInMeleeRange = Physics2D.OverlapCircleAll(transform.position, MeleeModeRange, EnemyLayer);
 
         if (moveJoystick.Horizontal != 0 || moveJoystick.Vertical != 0)
@@ -57,8 +71,8 @@ public class Shoot : MonoBehaviour
             //}
             //else
             //{
-                Pew();
-          //  }
+            Pew();
+            //  }
         }
 
     }
