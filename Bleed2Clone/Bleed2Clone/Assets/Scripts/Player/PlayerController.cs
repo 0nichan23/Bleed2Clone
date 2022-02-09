@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header("Variables")]
     public Camera cam;
     public Transform holder;
-    
+
     [Header("Jump")]
     public int ExtraJumps;
     public int jumpsLeft;
@@ -58,9 +58,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, CheckRadius, whatIsGround);
-        MoveInput = floatingJoystick.Horizontal;
-        MoveInputVer = floatingJoystick.Vertical;
-        if (usePCControls)
+        if (!usePCControls)
+        {
+            MoveInput = floatingJoystick.Horizontal;
+            MoveInputVer = floatingJoystick.Vertical;
+        }
+        else if (usePCControls)
         {
             MoveInput = Input.GetAxisRaw("Horizontal");
             MoveInputVer = Input.GetAxisRaw("Vertical");
@@ -69,7 +72,7 @@ public class PlayerController : MonoBehaviour
         {
             Movement();
 
-            if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpsLeft>0)
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpsLeft > 0)
             {
                 Jump();
             }
