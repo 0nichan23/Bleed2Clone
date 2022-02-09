@@ -101,7 +101,7 @@ public class Shoot : MonoBehaviour
         if (bullet != null)
         {
             StopCoroutine(ShootAnimation());
-            StartCoroutine(ShootAnimation());
+            //StartCoroutine(ShootAnimation());
             bullet.transform.position = firePointTransform.position;
             Bullet shot = bullet.GetComponent<Bullet>();
             bullet.transform.parent = null;
