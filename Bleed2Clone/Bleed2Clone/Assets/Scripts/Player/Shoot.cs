@@ -62,17 +62,28 @@ public class Shoot : MonoBehaviour
     {
         EnemiesInMeleeRange = Physics2D.OverlapCircleAll(transform.position, MeleeModeRange, EnemyLayer);
 
-        if (moveJoystick.Horizontal != 0 || moveJoystick.Vertical != 0)
+        if (!playerController.usePCControls)
         {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
-            //if (EnemiesInMeleeRange.Length > 0)
-            //{
-            //    Melee();
-            //}
-            //else
-            //{
-            Pew();
-            //  }
+            if (moveJoystick.Horizontal != 0 || moveJoystick.Vertical != 0)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
+                //if (EnemiesInMeleeRange.Length > 0)
+                //{
+                //    Melee();
+                //}
+                //else
+                //{
+                Pew();
+                //  }
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButton(0))
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
+                Pew();
+            }
         }
 
     }
