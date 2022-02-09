@@ -15,10 +15,13 @@ public class Bullet : MonoBehaviour
     Rigidbody2D rb;
     internal Vector2 direction;
 
+    Renderer _renderer;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         applyDamage = GetComponent<ApplyDamage>();
+        _renderer = GetComponent<Renderer>();
     }
 
     private void FixedUpdate()
@@ -32,6 +35,11 @@ public class Bullet : MonoBehaviour
         lifetimeTimer -= Time.deltaTime;
 
         if(lifetimeTimer <= 0)
+        {
+            Disable();
+        }
+
+        if (!_renderer.isVisible)
         {
             Disable();
         }
