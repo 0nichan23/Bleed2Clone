@@ -6,6 +6,8 @@ public class Shrine : MonoBehaviour
 {
     bool playerInside;
     AudioSource audioSource;
+    [SerializeField] private GameObject shrineActiveEffect;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -16,6 +18,7 @@ public class Shrine : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             AudioManager.instance.PlaySFX(audioSource, SFX_Type.shrine);
+            shrineActiveEffect.SetActive(true);
 
             PlayerPrefs.SetFloat("saveX", collision.transform.position.x);
             PlayerPrefs.SetFloat("saveY", collision.transform.position.y);
