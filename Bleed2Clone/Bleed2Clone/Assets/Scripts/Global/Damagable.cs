@@ -16,12 +16,15 @@ public class Damagable : MonoBehaviour
     [SerializeField] private GameObject deathGFX;
     private Color myColor;
     AudioSource audioSource;
-
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
     private void Start()
     {
         currentHp = maxHp;
         myColor = SRs[0].color;
-        audioSource = GetComponent<AudioSource>();
     }
     public IEnumerator TakeDamage(float howMuch)
     {

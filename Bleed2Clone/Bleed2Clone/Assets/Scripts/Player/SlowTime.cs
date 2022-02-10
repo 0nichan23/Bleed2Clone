@@ -11,12 +11,16 @@ public class SlowTime : MonoBehaviour
     public float TimeScale = 0.5f;
     public Slider Bar;
     AudioSource audioSource;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
     private void Start()
     {
         curTime = TotalTime;
         Bar.maxValue = TotalTime;
         Bar.value = curTime;
-        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {

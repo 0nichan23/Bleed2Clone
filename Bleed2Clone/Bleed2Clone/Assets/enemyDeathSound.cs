@@ -6,7 +6,7 @@ using UnityEngine;
 public class enemyDeathSound : MonoBehaviour
 {
     AudioSource audioSource;
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;

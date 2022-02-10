@@ -56,11 +56,14 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
     #endregion
-
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
     private void Start()
     {
         pool = GetComponentInChildren<ObjectPool>();
-        audioSource = GetComponent<AudioSource>();
         pool.Init();
         playerController = FindObjectOfType<PlayerController>();
     }

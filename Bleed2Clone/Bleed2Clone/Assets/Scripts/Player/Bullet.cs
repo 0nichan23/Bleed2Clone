@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         applyDamage = GetComponent<ApplyDamage>();
         audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
     }
 
     private void FixedUpdate()

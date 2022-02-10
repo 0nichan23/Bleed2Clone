@@ -59,7 +59,11 @@ public class PlayerController : MonoBehaviour
     public bool usePCControls;
 
     internal AudioSource audioSource;
-
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();

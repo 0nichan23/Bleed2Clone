@@ -6,9 +6,10 @@ public class Shrine : MonoBehaviour
 {
     bool playerInside;
     AudioSource audioSource;
-    private void Start()
+    private void Awake()
     {
-       audioSource = GetComponent<AudioSource>(); 
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
