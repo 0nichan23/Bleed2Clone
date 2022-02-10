@@ -21,7 +21,6 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         applyDamage = GetComponent<ApplyDamage>();
-        _renderer = GetComponent<Renderer>();
     }
 
     private void FixedUpdate()
@@ -39,7 +38,7 @@ public class Bullet : MonoBehaviour
             Disable();
         }
 
-        if (!_renderer.isVisible)
+        if (!IsVisibleToCamera(transform))
         {
             Disable();
         }
@@ -63,7 +62,11 @@ public class Bullet : MonoBehaviour
             Disable();
         }
     }
-
+    public static bool IsVisibleToCamera(Transform transform)
+    {
+        Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
+        return (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1) && visTest.z >= 0;
+    }
 
     void Disable()
     {
