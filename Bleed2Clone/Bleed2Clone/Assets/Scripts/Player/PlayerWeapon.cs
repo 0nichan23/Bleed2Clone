@@ -61,6 +61,7 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
     #endregion
+    internal Vector2 _shootVector;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -76,6 +77,10 @@ public class PlayerWeapon : MonoBehaviour
     }
     private void Update()
     {
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        difference.Normalize();
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         EnemiesInMeleeRange = Physics2D.OverlapCircleAll(transform.position, MeleeModeRange, EnemyLayer).ToList();
         List<Collider2D> noDuplicateEnemies = new List<Collider2D>();
 
@@ -98,7 +103,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
+                //transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
                 if (EnemiesInMeleeRange.Count > 0)
                     Melee();
                 else
