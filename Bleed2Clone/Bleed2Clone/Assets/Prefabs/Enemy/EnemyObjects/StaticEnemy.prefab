@@ -9,6 +9,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 272476786010330791, guid: 667e16f8ddda028489b160c0790fd940,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6446235781315598532, guid: 9c7069ee849bbe54f93aafcf4b9af715,
+        type: 3}
+    - target: {fileID: 272476786010330791, guid: 667e16f8ddda028489b160c0790fd940,
+        type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -27,6 +33,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7ba8ae8c44fe1b640b0e5ec844e43f8d, type: 2}
+    - target: {fileID: 1382179926117760397, guid: 667e16f8ddda028489b160c0790fd940,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.755
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382179926117760397, guid: 667e16f8ddda028489b160c0790fd940,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.217
+      objectReference: {fileID: 0}
     - target: {fileID: 1670478343052927374, guid: 667e16f8ddda028489b160c0790fd940,
         type: 3}
       propertyPath: m_RootOrder
