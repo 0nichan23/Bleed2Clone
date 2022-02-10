@@ -9,6 +9,7 @@ public class enemyDeathSound : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
         AudioManager.instance.PlaySFX(audioSource, SFX_Type.enemyDeath);
     }
 }

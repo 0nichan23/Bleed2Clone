@@ -14,10 +14,13 @@ public class EnemyWeapon : MonoBehaviour
     private Vector2 shootVector;
     internal Enemy enemy;
     #endregion
-
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
+    private void Start()
+    {
     }
     private void Update()
     {
