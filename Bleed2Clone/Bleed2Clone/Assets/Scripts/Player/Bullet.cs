@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 tmp = direction.normalized;
+        Vector3 tmp = direction.normalized;
         rb.velocity = tmp * speed;
     }
 
