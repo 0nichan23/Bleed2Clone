@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+[RequireComponent(typeof(AudioSource))]
 public class SlowTime : MonoBehaviour
 {
 
@@ -10,12 +10,13 @@ public class SlowTime : MonoBehaviour
     bool slowingTime;
     public float TimeScale = 0.5f;
     public Slider Bar;
-
+    AudioSource audioSource;
     private void Start()
     {
         curTime = TotalTime;
         Bar.maxValue = TotalTime;
         Bar.value = curTime;
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -54,6 +55,7 @@ public class SlowTime : MonoBehaviour
         {
             if (curTime > 0)
             {
+                AudioManager.instance.PlaySFX(audioSource, SFX_Type.slowTime);
                 slowingTime = true;
             }
         }
@@ -61,6 +63,7 @@ public class SlowTime : MonoBehaviour
 
     void stopSlowingTime()
     {
+        AudioManager.instance.PlaySFX(audioSource, SFX_Type.stopSlowTime);
         slowingTime = false;
     }
 }

@@ -105,6 +105,8 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
+        AudioManager.instance.PlaySFX(audioSource, SFX_Type.step);
+
         rb.velocity = new Vector2(MoveInput * speed, rb.velocity.y);
     }
     void CheckIfCanDash()
@@ -120,6 +122,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash()
     {
         AudioManager.instance.PlaySFX(audioSource,SFX_Type.dash);
+
         dashesLeft--;
         isDashing = true;
         rb.velocity = new Vector2(MoveInput, MoveInputVer);

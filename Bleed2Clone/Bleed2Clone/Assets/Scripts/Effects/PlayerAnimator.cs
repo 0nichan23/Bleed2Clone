@@ -11,7 +11,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private FixedJoystick shootJoystick;
     [SerializeField] private PlayerController playerController;
-    private Shoot shoot;
+    private PlayerWeapon shoot;
     private float flippedSign;
     private bool isGrounded;
     private bool isShootInput => playerController.usePCControls? Input.GetMouseButton(0) : Input.touchCount > 0;
@@ -21,7 +21,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         GameEvents.OnPlayerGroundedEvent += UpdateIsGrounded;
         flippedSign = 1f;
-        shoot = FindObjectOfType<Shoot>();
+        shoot = FindObjectOfType<PlayerWeapon>();
     }
 
     private void OnDisable()

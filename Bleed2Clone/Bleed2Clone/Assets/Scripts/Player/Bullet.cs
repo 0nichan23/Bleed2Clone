@@ -3,24 +3,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-
+public enum bulletType
+{
+    player,
+    enemy
+}
+[RequireComponent(typeof(AudioSource))]
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float LifeTime = 1.5f;
     [SerializeField] float speed;
     [SerializeField] List<int> layersIHit;
+    [SerializeField] bulletType type;
     ApplyDamage applyDamage;
     private float lifetimeTimer;
 
     Rigidbody2D rb;
+    AudioSource audioSource;
+    
     internal Vector2 direction;
-
-    Renderer _renderer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         applyDamage = GetComponent<ApplyDamage>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -58,6 +65,15 @@ public class Bullet : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Damagable>())
                 applyDamage.ApplyDamageToDamagable(collision.gameObject.GetComponent<Damagable>());
+
+            if(type == bulletType.player)
+            {
+                AudioManager.instance.PlaySFX(audioSource, SFX_Type.shurikanHit);
+            }
+            else if(type == bulletType.enemy)
+            {
+                AudioManager.instance.PlaySFX(audioSource, SFX_Type.fireBulletHit);
+            }
 
             Disable();
         }

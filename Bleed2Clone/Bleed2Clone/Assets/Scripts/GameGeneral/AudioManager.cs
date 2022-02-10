@@ -4,19 +4,43 @@ using UnityEngine;
 
 public enum SFX_Type
 {
+    #region player
+    //--------------//
     jump,
     land,
     dash,
-    shurikanShoot,
-    shurikanHit,
     step,
-    shrine,
-    slowTime,
-    regTime,
     playerHit,
     playerDeath,
+    //--------------//
+    #endregion
+
+    #region player shooting
+    //--------------//
+    shurikanShoot,
+    shurikanHit,
+    //--------------//
+    #endregion
+
+    #region enemy
+    //--------------//
+    fireBulletShoot,
+    fireBulletHit,
     enemyHit,
-    enemyDeath
+    enemyDeath,
+    //--------------//
+    #endregion
+
+    #region shrine
+    //--------------//
+    shrine,
+    #endregion
+
+    #region time
+    slowTime,
+    stopSlowTime,
+    //--------------//
+    #endregion
 }
 
 public class SFX
@@ -63,7 +87,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioSource audioSource, SFX_Type type)
     {
-        audioSource.clip = sfxPool.Find(x => x.type == type).audio;
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = sfxPool.Find(x => x.type == type).audio;
+            audioSource.Play();
+        }
     }
 
 }

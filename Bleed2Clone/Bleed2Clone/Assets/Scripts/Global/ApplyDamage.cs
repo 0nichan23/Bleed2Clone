@@ -8,6 +8,6 @@ public class ApplyDamage : MonoBehaviour
     
     public void ApplyDamageToDamagable(Damagable damagable)
     {
-        damagable.TakeDamage(damage);
+        StartCoroutine(damagable.TakeDamage(damage));
     }
 }

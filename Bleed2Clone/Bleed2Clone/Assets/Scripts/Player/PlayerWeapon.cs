@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
-
-public class Shoot : MonoBehaviour
+[RequireComponent(typeof(AudioSource))]
+public class PlayerWeapon : MonoBehaviour
 {
     [Header("Joystick")]
     [SerializeField] private FixedJoystick moveJoystick;
@@ -30,6 +30,9 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Transform playerGFX; //using this to check if the player is flipped
     PlayerController playerController;
 
+
+    AudioSource audioSource;
+
     #region backend properties
     private float lastStrike;
     private float lastShot;
@@ -57,6 +60,7 @@ public class Shoot : MonoBehaviour
     private void Start()
     {
         pool = GetComponentInChildren<ObjectPool>();
+        audioSource = GetComponent<AudioSource>();
         pool.Init();
         playerController = FindObjectOfType<PlayerController>();
     }
@@ -98,13 +102,15 @@ public class Shoot : MonoBehaviour
 
         if (bullet != null)
         {
-            if(lastShotArmAnimation != null) StopCoroutine(lastShotArmAnimation);
+            if (lastShotArmAnimation != null) StopCoroutine(lastShotArmAnimation);
             lastShotArmAnimation = StartCoroutine(ShootAnimation());
             bullet.transform.position = firePointTransform.position;
             Bullet shot = bullet.GetComponent<Bullet>();
             bullet.transform.parent = null;
             bullet.SetActive(true);
             shot.direction = shootVector;
+
+            AudioManager.instance.PlaySFX(audioSource, SFX_Type.shurikanShoot);
         }
     }
 
@@ -119,7 +125,7 @@ public class Shoot : MonoBehaviour
 
         foreach (Collider2D enemy in HitEnemiesWithinHitBox)
         {
-            enemy.GetComponent<Damagable>().TakeDamage(meleeDamage);
+            StartCoroutine(enemy.GetComponent<Damagable>().TakeDamage(meleeDamage));
         }
     }
 

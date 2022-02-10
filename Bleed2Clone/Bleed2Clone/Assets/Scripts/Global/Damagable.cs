@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(AudioSource))]
 public class Damagable : MonoBehaviour
 {
     [SerializeField] float maxHp;
@@ -13,26 +13,47 @@ public class Damagable : MonoBehaviour
     [SerializeField] private Transform gfxTransform;
     [SerializeField] private SpriteRenderer[] SRs;
     private Color myColor;
+    AudioSource audioSource;
 
     private void Start()
     {
         currentHp = maxHp;
         myColor = SRs[0].color;
+        audioSource = GetComponent<AudioSource>();
     }
-    public void TakeDamage(float howMuch)
+    public IEnumerator TakeDamage(float howMuch)
     {
+        //hit
         currentHp -= howMuch;
+        if (GetComponent<PlayerController>() != null)
+        {
+            AudioManager.instance.PlaySFX(audioSource, SFX_Type.playerHit);
+        }
+        else
+        {
+            AudioManager.instance.PlaySFX(audioSource, SFX_Type.enemyHit);
+        }
+
+        //death
         if (currentHp <= 0)
         {
             if (GetComponent<PlayerController>() != null)
             {
+                AudioManager.instance.PlaySFX(audioSource, SFX_Type.playerDeath);
+                yield return new WaitForSeconds(audioSource.clip.length);
                 transform.position = new Vector2(PlayerPrefs.GetFloat("saveX"), PlayerPrefs.GetFloat("saveY"));
             }
             else
+            {
+                AudioManager.instance.PlaySFX(audioSource, SFX_Type.enemyDeath);
+                yield return new WaitForSeconds(audioSource.clip.length);
                 gameObject.SetActive(false);
+            }
         }
-        else
-             if (onHitEffect) StartCoroutine(DoEffect());
+        else if (onHitEffect)
+        {
+            StartCoroutine(DoEffect());
+        }
 
     }
 
