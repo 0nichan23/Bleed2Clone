@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
 
     Rigidbody2D rb;
     AudioSource audioSource;
-    
+
     internal Vector2 direction;
 
     private void Awake()
@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour
     {
         lifetimeTimer -= Time.deltaTime;
 
-        if(lifetimeTimer <= 0)
+        if (lifetimeTimer <= 0)
         {
             Disable();
         }
@@ -60,24 +60,31 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        StartCoroutine(BulletBehaviourOnHit(collision));
+    }
+
+    IEnumerator BulletBehaviourOnHit(Collider2D collision)
+    {
         //print(name + " Collides with" + collision.gameObject.name);
         if (layersIHit.Contains(collision.gameObject.layer))
         {
             if (collision.gameObject.GetComponent<Damagable>())
                 applyDamage.ApplyDamageToDamagable(collision.gameObject.GetComponent<Damagable>());
 
-            if(type == bulletType.player)
+            if (type == bulletType.player)
             {
                 AudioManager.instance.PlaySFX(audioSource, SFX_Type.shurikanHit);
             }
-            else if(type == bulletType.enemy)
+            else if (type == bulletType.enemy)
             {
                 AudioManager.instance.PlaySFX(audioSource, SFX_Type.fireBulletHit);
             }
 
+            yield return new WaitForSeconds(audioSource.clip.length);
             Disable();
         }
     }
+
     public static bool IsVisibleToCamera(Transform transform)
     {
         Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
