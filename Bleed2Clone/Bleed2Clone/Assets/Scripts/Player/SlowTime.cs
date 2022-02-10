@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 [RequireComponent(typeof(AudioSource))]
 public class SlowTime : MonoBehaviour
 {
 
     [Header("Slow Time")]
+    [SerializeField] private UnityEngine.Rendering.Volume slowtimeVolume;
+    private float volumeLerp = 0;
     public float TotalTime;
     public float curTime;
     bool slowingTime;
@@ -40,6 +43,8 @@ public class SlowTime : MonoBehaviour
             {
                 stopSlowingTime();
             }
+
+            if (volumeLerp < 1) volumeLerp += Time.deltaTime * 2f;
         }
         else
         {
@@ -49,8 +54,12 @@ public class SlowTime : MonoBehaviour
             {
                 curTime = TotalTime;
             }
+
+            if (volumeLerp > 0) volumeLerp -= Time.deltaTime * 2f;
         }
         BarFill.fillAmount = curTime / TotalTime;
+
+        slowtimeVolume.weight = volumeLerp;
     }
 
     void StartSlowingTime()
