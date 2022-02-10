@@ -27,19 +27,28 @@ public class EnemyWeapon : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
         }
     }
+    public static bool IsVisibleToCamera(Transform transform)
+    {
+        Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
+        return (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1) && visTest.z >= 0;
+    }
+
     public void Shoot()
     {
-        GameObject bullet = enemy.database.bulletPool.GetPooledObjects();
-
-        if (bullet != null)
+        if (IsVisibleToCamera(transform))
         {
-            AudioManager.instance.PlaySFX(audioSource, SFX_Type.fireBulletShoot);
+            GameObject bullet = enemy.database.bulletPool.GetPooledObjects();
 
-            bullet.transform.position = firePointTransform.position;
-            bullet.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, shootVector) - 90f);
-            Bullet shot = bullet.GetComponent<Bullet>();
-            bullet.SetActive(true);
-            shot.direction = shootVector;
+            if (bullet != null)
+            {
+                AudioManager.instance.PlaySFX(audioSource, SFX_Type.fireBulletShoot);
+
+                bullet.transform.position = firePointTransform.position;
+                bullet.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, shootVector) - 90f);
+                Bullet shot = bullet.GetComponent<Bullet>();
+                bullet.SetActive(true);
+                shot.direction = shootVector;
+            }
         }
     }
 }

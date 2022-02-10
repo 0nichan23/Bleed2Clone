@@ -52,7 +52,7 @@ MonoBehaviour:
   LifeTime: 2.5
   speed: 5
   layersIHit: 06000000
-  type: 0
+  type: 1
 --- !u!212 &3618008715896596300
 SpriteRenderer:
   m_ObjectHideFlags: 0
