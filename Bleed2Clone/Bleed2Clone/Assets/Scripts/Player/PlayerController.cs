@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -15,7 +15,19 @@ public class PlayerController : MonoBehaviour
     public float MoveInputVer;
 
     [Header("Collisions")]
-    public bool isGrounded;
+    private bool _isGrounded;
+    public bool isGrounded
+    {
+        get => _isGrounded;
+        set
+        {
+            _isGrounded = value;
+            if (_isGrounded)
+            {
+                AudioManager.instance.PlaySFX(audioSource, SFX_Type.land);
+            }
+        }
+    }
     public Transform groundCheck;
     public float CheckRadius;
     public LayerMask whatIsGround;
@@ -45,10 +57,12 @@ public class PlayerController : MonoBehaviour
     public FixedJoystick floatingJoystick;
     public bool usePCControls;
 
+    internal AudioSource audioSource;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         jumpsLeft = ExtraJumps;
 
         // first save
@@ -77,11 +91,6 @@ public class PlayerController : MonoBehaviour
             {
                 Jump();
             }
-
-            //if (MoveInputVer > 0.6 && jumpsLeft > 0)
-            //{
-            //    Jump();
-            //}
         }
         if (isGrounded)
         {
@@ -96,14 +105,6 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        if (FaceRight == false && MoveInput < 0)
-        {
-            Flip();
-        }
-        else if (FaceRight == true && MoveInput > 0)
-        {
-            Flip();
-        }
         rb.velocity = new Vector2(MoveInput * speed, rb.velocity.y);
     }
     void CheckIfCanDash()
@@ -118,6 +119,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
+        AudioManager.instance.PlaySFX(audioSource,SFX_Type.dash);
         dashesLeft--;
         isDashing = true;
         rb.velocity = new Vector2(MoveInput, MoveInputVer);
@@ -132,21 +134,8 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        //if (Time.time - lastJump <= jumpCd)
-        //{
-        //    return;
-        //}
-        //lastJump = Time.time;
+        AudioManager.instance.PlaySFX(audioSource, SFX_Type.jump);
         rb.velocity = Vector2.up * JumpForce;
         jumpsLeft--;
-        Debug.Log(jumpsLeft);
     }
-
-    void Flip()
-    {
-        /*FaceRight = !FaceRight;
-        transform.Rotate(0f, 180f, 0f); */
-    }
-
-
 }

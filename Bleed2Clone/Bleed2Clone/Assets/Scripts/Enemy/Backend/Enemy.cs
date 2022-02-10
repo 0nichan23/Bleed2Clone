@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent(typeof(AudioSource))]
 public class Enemy : MonoBehaviour
 {
     public Transform weaponTransform;
@@ -16,13 +17,14 @@ public class Enemy : MonoBehaviour
     private EnemyState _state = EnemyState.Created;
 
     internal EnemyDatabase database;
-
+    internal AudioSource audioSource;
     private void Start()
     {
         if (FindObjectOfType<PlayerController>())
             player = FindObjectOfType<PlayerController>().gameObject.transform;
 
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         sr = GetComponentInChildren<SpriteRenderer>();
         hp = database.MaxHP;
         agent = GetComponent<Agent>();
