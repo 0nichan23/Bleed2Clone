@@ -19,9 +19,6 @@ public class EnemyWeapon : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
     }
-    private void Start()
-    {
-    }
     private void Update()
     {
         if (enemy.player != null)
