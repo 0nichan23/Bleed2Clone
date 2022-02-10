@@ -120,6 +120,8 @@ public class PlayerWeapon : MonoBehaviour
             return;
 
         lastStrike = Time.time;
+        
+        AudioManager.instance.PlaySFX(audioSource, SFX_Type.melee);
 
         Collider2D[] HitEnemiesWithinHitBox = Physics2D.OverlapCircleAll(weaponTransform.position, attackRange, EnemyLayer);
 

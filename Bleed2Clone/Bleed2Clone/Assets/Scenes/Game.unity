@@ -10427,6 +10427,37 @@ MonoBehaviour:
   audioSource: {fileID: 824419476}
   intro: {fileID: 8300000, guid: 2972c25e8eff00e4cbdf81ccc65887a8, type: 3}
   gameLoop: {fileID: 8300000, guid: 4cd1cf686f5201e488a1a56da5a189b9, type: 3}
+  sfxPool:
+  - audio: {fileID: 8300000, guid: 1e1fc19fbf21ab9489032585981115b4, type: 3}
+    type: 0
+  - audio: {fileID: 8300000, guid: 5cad11c24b028964aab3cbf12bc49a7c, type: 3}
+    type: 1
+  - audio: {fileID: 8300000, guid: 5124a4e916871484dbac0e2fce80f86e, type: 3}
+    type: 2
+  - audio: {fileID: 8300000, guid: dd1a2fba7e1dc9946a015a27e3ee1522, type: 3}
+    type: 3
+  - audio: {fileID: 8300000, guid: 5cc375a1a73582c48945d2b6b88121bb, type: 3}
+    type: 4
+  - audio: {fileID: 8300000, guid: 6cf8a9b479433c74c86dfb7e5b78d034, type: 3}
+    type: 5
+  - audio: {fileID: 8300000, guid: e94cba2e509c00947b2a2e403e371699, type: 3}
+    type: 6
+  - audio: {fileID: 8300000, guid: fa97c576369069d46a40213f0e042e52, type: 3}
+    type: 7
+  - audio: {fileID: 8300000, guid: 73c2d3b5cdf704042b6d7949faa51ccd, type: 3}
+    type: 8
+  - audio: {fileID: 8300000, guid: 74a1e3f9c5bd1124bbea136818287df8, type: 3}
+    type: 9
+  - audio: {fileID: 8300000, guid: 65b944c1df1013440b6872dd8a349e9e, type: 3}
+    type: 10
+  - audio: {fileID: 8300000, guid: dca4af03096322049b07a44fb636c150, type: 3}
+    type: 11
+  - audio: {fileID: 8300000, guid: ae8730b0b31dff94997a7f89e9fad29f, type: 3}
+    type: 12
+  - audio: {fileID: 8300000, guid: da440c329106b11409daf52efe69baf6, type: 3}
+    type: 13
+  - audio: {fileID: 8300000, guid: eb4cdd268a4894f4f880e246dd95d0ce, type: 3}
+    type: 14
 --- !u!1 &831426199
 GameObject:
   m_ObjectHideFlags: 0
@@ -107360,7 +107391,7 @@ PrefabInstance:
     - target: {fileID: 120720428285078464, guid: bbc8438ea21054f4ead0daad5779c6ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7600007
+      value: -4.76
       objectReference: {fileID: 0}
     - target: {fileID: 120720428285078464, guid: bbc8438ea21054f4ead0daad5779c6ba,
         type: 3}
@@ -107465,7 +107496,7 @@ PrefabInstance:
     - target: {fileID: 120720429222550945, guid: bbc8438ea21054f4ead0daad5779c6ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7600007
+      value: -4.76
       objectReference: {fileID: 0}
     - target: {fileID: 120720429222550945, guid: bbc8438ea21054f4ead0daad5779c6ba,
         type: 3}

@@ -9,9 +9,9 @@ public enum SFX_Type
     jump,
     land,
     dash,
-    step,
     playerHit,
     playerDeath,
+    melee,
     //--------------//
     #endregion
 
@@ -42,7 +42,7 @@ public enum SFX_Type
     //--------------//
     #endregion
 }
-
+[System.Serializable]
 public class SFX
 {
     public AudioClip audio;

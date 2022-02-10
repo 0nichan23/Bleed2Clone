@@ -105,8 +105,6 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        AudioManager.instance.PlaySFX(audioSource, SFX_Type.step);
-
         rb.velocity = new Vector2(MoveInput * speed, rb.velocity.y);
     }
     void CheckIfCanDash()
