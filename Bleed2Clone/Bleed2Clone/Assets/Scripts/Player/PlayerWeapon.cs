@@ -77,7 +77,8 @@ public class PlayerWeapon : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 mPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
+        Vector3 difference = Camera.main.ScreenToWorldPoint(mPos) - transform.position;
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
