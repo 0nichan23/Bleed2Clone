@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad7958d387c03747b66e3134290b992, type: 3}
   m_Name: Flying Enemy
   m_EditorClassIdentifier: 
-  MaxHP: 1
+  MaxHP: 3
   enemyRange: 50
   stepsInSeconds: 1
   cooldown: 3
+  destination: {x: 55.338005, y: 5.0050015}
   enemyPrefab: {fileID: 5792493588697200075, guid: be92f2d514ff0594ca02d9027e37bd70,
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}

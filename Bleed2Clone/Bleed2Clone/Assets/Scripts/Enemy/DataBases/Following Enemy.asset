@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8b1b132719a6a478c7ca87a7165fe1, type: 3}
   m_Name: Following Enemy
   m_EditorClassIdentifier: 
-  MaxHP: 1
+  MaxHP: 3
   enemyRange: 50
   stepsInSeconds: 0.5
   cooldown: 3
+  destination: {x: 55.338005, y: 5.8360786}
   enemyPrefab: {fileID: 3325122294339669849, guid: 7dae4fbb775d6764aa4b3f4a0f11a385,
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}

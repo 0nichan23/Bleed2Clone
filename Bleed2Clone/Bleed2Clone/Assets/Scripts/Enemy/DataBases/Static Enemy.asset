@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea97d2196a2dab746892f3f42a102264, type: 3}
   m_Name: Static Enemy
   m_EditorClassIdentifier: 
-  MaxHP: 1
+  MaxHP: 3
   enemyRange: 50
   stepsInSeconds: 3
   cooldown: 3
+  destination: {x: 0, y: 0}
   enemyPrefab: {fileID: 7925833976263698085, guid: d29df28d5b3108e4c96e2bec15ec821d,
     type: 3}
   enemyRagDoll: {fileID: 100062, guid: 57e57af3d47ed97438a55974570cfc16, type: 3}

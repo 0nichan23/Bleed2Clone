@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
 [RequireComponent(typeof(AudioSource))]
 public class PlayerWeapon : MonoBehaviour
 {
@@ -17,7 +20,7 @@ public class PlayerWeapon : MonoBehaviour
     [Header("Melee")]
     [SerializeField] private float meleeDamage;
     [SerializeField] private float MeleeModeRange;
-    [SerializeField] private Collider2D[] EnemiesInMeleeRange;
+    [SerializeField] private List<Collider2D> EnemiesInMeleeRange;
 
     [Header("Cooldown")]
     [SerializeField] private float CoolDownMelee;
@@ -28,6 +31,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private GameObject defaultArm;
     [SerializeField] private GameObject shootArm;
     [SerializeField] private Transform playerGFX; //using this to check if the player is flipped
+    [SerializeField] private GameObject knifeGFX;
+    [SerializeField] private GameObject knifeSliceGFX;
     PlayerController playerController;
 
 
@@ -66,10 +71,12 @@ public class PlayerWeapon : MonoBehaviour
         pool = GetComponentInChildren<ObjectPool>();
         pool.Init();
         playerController = FindObjectOfType<PlayerController>();
+        knifeSliceGFX.transform.parent = null;
     }
     private void Update()
     {
-        EnemiesInMeleeRange = Physics2D.OverlapCircleAll(transform.position, MeleeModeRange, EnemyLayer);
+        EnemiesInMeleeRange = Physics2D.OverlapCircleAll(transform.position, MeleeModeRange, EnemyLayer).ToList();
+        
 
         if (!playerController.usePCControls)
         {
@@ -84,7 +91,7 @@ public class PlayerWeapon : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
-                if (EnemiesInMeleeRange.Length > 0)
+                if (EnemiesInMeleeRange.Count > 0)
                     Melee();
                 else
                     Pew();
@@ -106,7 +113,7 @@ public class PlayerWeapon : MonoBehaviour
         if (bullet != null)
         {
             if (lastShotArmAnimation != null) StopCoroutine(lastShotArmAnimation);
-            lastShotArmAnimation = StartCoroutine(ShootAnimation());
+            lastShotArmAnimation = StartCoroutine(ShootAnimation(false));
             bullet.transform.position = firePointTransform.position;
             Bullet shot = bullet.GetComponent<Bullet>();
             bullet.transform.parent = null;
@@ -125,11 +132,11 @@ public class PlayerWeapon : MonoBehaviour
         lastStrike = Time.time;
 
         if (lastShotArmAnimation != null) StopCoroutine(lastShotArmAnimation);
-        lastShotArmAnimation = StartCoroutine(ShootAnimation());
+        lastShotArmAnimation = StartCoroutine(ShootAnimation(true));
 
         AudioManager.instance.PlaySFX(audioSource, SFX_Type.melee);
 
-        Collider2D[] HitEnemiesWithinHitBox = Physics2D.OverlapCircleAll(weaponTransform.position, attackRange, EnemyLayer);
+        Collider2D[] HitEnemiesWithinHitBox = Physics2D.OverlapCircleAll(weaponTransform.position, MeleeModeRange, EnemyLayer);
 
         foreach (Collider2D enemy in HitEnemiesWithinHitBox)
         {
@@ -143,11 +150,21 @@ public class PlayerWeapon : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, MeleeModeRange);
     }
 
-    private IEnumerator ShootAnimation()
+    private IEnumerator ShootAnimation(bool isMelee)
     {
         shootArm.SetActive(false);
         shootArm.SetActive(true);
+        knifeGFX.SetActive(isMelee);
         defaultArm.SetActive(false);
+
+        if (isMelee)
+        {
+            knifeSliceGFX.transform.position = EnemiesInMeleeRange[0].transform.position;
+            float gfxAngle = Vector2.SignedAngle(Vector2.up, (transform.position - EnemiesInMeleeRange[0].transform.position));
+            knifeSliceGFX.transform.rotation = Quaternion.Euler(0, 0, gfxAngle-90f);
+            knifeSliceGFX.SetActive(false);
+            knifeSliceGFX.SetActive(true);
+        }
 
         SetArmAngle();
 
@@ -155,6 +172,7 @@ public class PlayerWeapon : MonoBehaviour
 
         shootArm.SetActive(false);
         defaultArm.SetActive(true);
+        knifeGFX.SetActive(false);
 
     }
 
