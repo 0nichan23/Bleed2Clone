@@ -90,6 +90,7 @@ public class AudioManager : MonoBehaviour
         if (!audioSource.isPlaying)
         {
             audioSource.clip = sfxPool.Find(x => x.type == type).audio;
+            audioSource.loop = false;
             audioSource.Play();
         }
     }

@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _isGrounded = value;
-            if (_isGrounded)
+            if (value == true)
             {
                 AudioManager.instance.PlaySFX(audioSource, SFX_Type.land);
             }
