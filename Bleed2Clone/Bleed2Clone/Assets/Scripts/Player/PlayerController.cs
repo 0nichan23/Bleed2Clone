@@ -15,17 +15,17 @@ public class PlayerController : MonoBehaviour
     public float MoveInputVer;
 
     [Header("Collisions")]
-    private bool _isGrounded;
+    private bool _isGrounded = false;
     public bool isGrounded
     {
         get => _isGrounded;
         set
         {
-            _isGrounded = value;
-            if (value == true)
+            if (_isGrounded != true && value == true)
             {
                 AudioManager.instance.PlaySFX(audioSource, SFX_Type.land);
             }
+            _isGrounded = value;
         }
     }
     public Transform groundCheck;
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
-        AudioManager.instance.PlaySFX(audioSource,SFX_Type.dash);
+        AudioManager.instance.PlaySFX(audioSource, SFX_Type.dash);
 
         dashesLeft--;
         isDashing = true;
