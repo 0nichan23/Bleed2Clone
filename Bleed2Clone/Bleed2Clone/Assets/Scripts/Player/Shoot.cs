@@ -15,6 +15,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Transform firePointTransform;
 
     [Header("Melee")]
+    [SerializeField] private float meleeDamage;
     [SerializeField] private float MeleeModeRange;
     [SerializeField] private Collider2D[] EnemiesInMeleeRange;
 
@@ -32,6 +33,7 @@ public class Shoot : MonoBehaviour
     #region backend properties
     private float lastStrike;
     private float lastShot;
+    private Coroutine lastShotArmAnimation;
 
     private ObjectPool pool;
 
@@ -67,14 +69,7 @@ public class Shoot : MonoBehaviour
             if (moveJoystick.Horizontal != 0 || moveJoystick.Vertical != 0)
             {
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
-                //if (EnemiesInMeleeRange.Length > 0)
-                //{
-                //    Melee();
-                //}
-                //else
-                //{
-                Pew();
-                //  }
+
             }
         }
         else
@@ -82,7 +77,10 @@ public class Shoot : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
-                Pew();
+                if (EnemiesInMeleeRange.Length > 0)
+                    Melee();
+                else
+                    Pew();
             }
         }
 
@@ -100,8 +98,8 @@ public class Shoot : MonoBehaviour
 
         if (bullet != null)
         {
-            StopCoroutine(ShootAnimation());
-            //StartCoroutine(ShootAnimation());
+            if(lastShotArmAnimation != null) StopCoroutine(lastShotArmAnimation);
+            lastShotArmAnimation = StartCoroutine(ShootAnimation());
             bullet.transform.position = firePointTransform.position;
             Bullet shot = bullet.GetComponent<Bullet>();
             bullet.transform.parent = null;
@@ -120,7 +118,9 @@ public class Shoot : MonoBehaviour
         Collider2D[] HitEnemiesWithinHitBox = Physics2D.OverlapCircleAll(weaponTransform.position, attackRange, EnemyLayer);
 
         foreach (Collider2D enemy in HitEnemiesWithinHitBox)
-            Debug.Log("hit " + enemy.name);
+        {
+            enemy.GetComponent<Damagable>().TakeDamage(meleeDamage);
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -131,6 +131,7 @@ public class Shoot : MonoBehaviour
 
     private IEnumerator ShootAnimation()
     {
+        shootArm.SetActive(false);
         shootArm.SetActive(true);
         defaultArm.SetActive(false);
 
@@ -146,7 +147,7 @@ public class Shoot : MonoBehaviour
     private void SetArmAngle()
     {
         float xScale = Mathf.Sign(playerGFX.localScale.x);
-        float angle = Vector2.SignedAngle(new Vector2(xScale, 0), moveJoystick.Direction);
+        float angle = Vector2.SignedAngle(new Vector2(xScale, 0), shootVector);
         shootArm.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 

@@ -15,14 +15,12 @@ public class PlayerAnimator : MonoBehaviour
     private float flippedSign;
     private bool isGrounded;
     private bool isShootInput => playerController.usePCControls? Input.GetMouseButton(0) : Input.touchCount > 0;
-    [SerializeField] private bool boolshit;
 
 
     private void Start()
     {
         GameEvents.OnPlayerGroundedEvent += UpdateIsGrounded;
         flippedSign = 1f;
-        //if (playerController == null) GetComponent<PlayerController>();
         shoot = FindObjectOfType<Shoot>();
     }
 
@@ -34,7 +32,6 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        boolshit = isShootInput;
         bool changedFlip = false;
         float horiVelocity = rb2d.velocity.x;
         float vertiVelocity = rb2d.velocity.y;
