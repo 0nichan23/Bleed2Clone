@@ -21,7 +21,6 @@ public class StaticEnemy : EnemyDatabase
 
     public override IEnumerator PlayerNotInRangeBehaviour(Enemy enemy)
     {
-        Debug.Log("Player Not In Range");
         yield return null;
     }
 }
