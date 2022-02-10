@@ -48,7 +48,6 @@ public abstract class EnemyDatabase : ScriptableObject
     public bool isDestinationInGround(Enemy enemy, Vector3 destination)
     {
         Vector3 direction = destination - enemy.transform.position;
-        Debug.Log(enemy.name + " : , is Destination In Ground : " + Physics.Raycast(enemy.transform.position, direction.normalized, 3, LayerMask.NameToLayer("Ground")));
         return Physics2D.Raycast(enemy.transform.position, direction, 100, LayerMask.NameToLayer("Ground"));
     }
 }
