@@ -9,7 +9,7 @@ public class SlowTime : MonoBehaviour
     public float curTime;
     bool slowingTime;
     public float TimeScale = 0.5f;
-    public Slider Bar;
+    public Image BarFill;
     AudioSource audioSource;
     private void Awake()
     {
@@ -19,8 +19,8 @@ public class SlowTime : MonoBehaviour
     private void Start()
     {
         curTime = TotalTime;
-        Bar.maxValue = TotalTime;
-        Bar.value = curTime;
+        //Bar.maxValue = TotalTime;
+        BarFill.fillAmount = curTime / TotalTime;
     }
     void Update()
     {
@@ -50,7 +50,7 @@ public class SlowTime : MonoBehaviour
                 curTime = TotalTime;
             }
         }
-        Bar.value = curTime;
+        BarFill.fillAmount = curTime / TotalTime;
     }
 
     void StartSlowingTime()

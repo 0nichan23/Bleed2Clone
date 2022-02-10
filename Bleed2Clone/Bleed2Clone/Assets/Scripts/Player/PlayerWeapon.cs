@@ -76,8 +76,14 @@ public class PlayerWeapon : MonoBehaviour
     private void Update()
     {
         EnemiesInMeleeRange = Physics2D.OverlapCircleAll(transform.position, MeleeModeRange, EnemyLayer).ToList();
-        List<Collider2D> query = (List<Collider2D>)(from enemy in EnemiesInMeleeRange select enemy.isTrigger == false);
-        EnemiesInMeleeRange = query;
+        List<Collider2D> noDuplicateEnemies = new List<Collider2D>();
+
+        foreach (Collider2D enemyCol in EnemiesInMeleeRange)
+        {
+            if (!enemyCol.isTrigger) noDuplicateEnemies.Add(enemyCol);
+        }
+
+        EnemiesInMeleeRange = noDuplicateEnemies;
 
         if (!playerController.usePCControls)
         {
@@ -137,9 +143,9 @@ public class PlayerWeapon : MonoBehaviour
 
         AudioManager.instance.PlaySFX(audioSource, SFX_Type.melee);
 
-        Collider2D[] HitEnemiesWithinHitBox = Physics2D.OverlapCircleAll(weaponTransform.position, MeleeModeRange, EnemyLayer);
+        //Collider2D[] HitEnemiesWithinHitBox = Physics2D.OverlapCircleAll(weaponTransform.position, MeleeModeRange, EnemyLayer);
 
-        foreach (Collider2D enemy in HitEnemiesWithinHitBox)
+        foreach (Collider2D enemy in EnemiesInMeleeRange)
         {
             StartCoroutine(enemy.GetComponent<Damagable>().TakeDamage(meleeDamage));
         }
