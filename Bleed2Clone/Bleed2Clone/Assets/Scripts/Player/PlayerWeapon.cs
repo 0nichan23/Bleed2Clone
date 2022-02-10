@@ -65,6 +65,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     private void Start()
     {
