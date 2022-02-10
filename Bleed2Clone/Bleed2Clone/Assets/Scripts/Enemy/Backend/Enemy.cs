@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 
     private float hp;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
     private EnemyState _state = EnemyState.Created;
 
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
             player = FindObjectOfType<PlayerController>().gameObject.transform;
 
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         hp = database.MaxHP;
         agent = GetComponent<Agent>();
 
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         if (player != null)
+        {
             if (DistanceFromPlayer() <= database.enemyRange)
             {
                 SwitchState(EnemyState.PlayerInRange);
@@ -40,6 +43,10 @@ public class Enemy : MonoBehaviour
             {
                 SwitchState(EnemyState.PlayerNotInRange);
             }
+
+            Vector3 enemyDirectionLocal = player.transform.InverseTransformPoint(transform.position);
+            sr.flipX = enemyDirectionLocal.x < 0;
+        }
     }
     private float DistanceFromPlayer()
     {
@@ -55,7 +62,7 @@ public class Enemy : MonoBehaviour
         switch (_state)
         {
             case EnemyState.PlayerNotInRange:
-               StartCoroutine(database.PlayerNotInRangeBehaviour(this));
+                StartCoroutine(database.PlayerNotInRangeBehaviour(this));
                 break;
             case EnemyState.PlayerInRange:
                 StartCoroutine(database.PlayerInRangeBehaviour(this));
