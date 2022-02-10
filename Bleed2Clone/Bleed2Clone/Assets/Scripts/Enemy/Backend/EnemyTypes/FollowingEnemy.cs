@@ -29,13 +29,19 @@ public class FollowingEnemy : EnemyDatabase
 
             enemy.agent.SetMovement(true);
 
+            destination = new Vector2(enemy.player.position.x, enemy.transform.position.y);
+
             if (enemy.player != null && Vector2.Distance(enemy.transform.position, enemy.player.position) < 1)
             {
                 enemy.agent.SetDestination(enemy.transform.position);
             }
-            else if (enemy.player != null && !isDestinationInGround(enemy, new Vector2(enemy.player.position.x, enemy.transform.position.y)))
+            else if (enemy.player != null && !isDestinationInGround(enemy, destination))
             {
-                enemy.agent.SetDestination(new Vector2(enemy.player.position.x, enemy.transform.position.y));
+                enemy.agent.SetDestination(destination);
+            }
+            else
+            {
+                enemy.agent.SetDestination(enemy.transform.position);
             }
             yield return null;
         }

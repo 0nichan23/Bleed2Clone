@@ -16,6 +16,7 @@ public abstract class EnemyDatabase : ScriptableObject
     public float enemyRange;
     public float stepsInSeconds = 3;
     public float cooldown = 1;
+    public Vector2 destination;
 
     public GameObject enemyPrefab;
     public GameObject enemyRagDoll;
@@ -44,9 +45,10 @@ public abstract class EnemyDatabase : ScriptableObject
         enemy.database.OnCreated(enemy);
     }
 
-    public bool isDestinationInGround(Enemy enemy,Vector3 destination)
+    public bool isDestinationInGround(Enemy enemy, Vector3 destination)
     {
         Vector3 direction = destination - enemy.transform.position;
-        return Physics.Raycast(enemy.transform.position, direction, 1,LayerMask.NameToLayer("Ground"));
+        Debug.Log(enemy.name + " : , is Destination In Ground : " + Physics.Raycast(enemy.transform.position, direction.normalized, 3, LayerMask.NameToLayer("Ground")));
+        return Physics2D.Raycast(enemy.transform.position, direction, 100, LayerMask.NameToLayer("Ground"));
     }
 }
