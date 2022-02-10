@@ -13,6 +13,7 @@ public class Damagable : MonoBehaviour
     [SerializeField] private bool onHitEffect;
     [SerializeField] private Transform gfxTransform;
     [SerializeField] private SpriteRenderer[] SRs;
+    [SerializeField] private GameObject deathGFX;
     private Color myColor;
     AudioSource audioSource;
 
@@ -42,7 +43,12 @@ public class Damagable : MonoBehaviour
             {
                 AudioManager.instance.PlaySFX(audioSource, SFX_Type.playerDeath);
                 yield return new WaitForSeconds(audioSource.clip.length);
+                deathGFX.SetActive(true);
+                gfxTransform.gameObject.SetActive(false);
+                yield return new WaitForSeconds(1f);
                 transform.position = new Vector2(PlayerPrefs.GetFloat("saveX"), PlayerPrefs.GetFloat("saveY"));
+                deathGFX.SetActive(false);
+                gfxTransform.gameObject.SetActive(true);
             }
             else
             {
