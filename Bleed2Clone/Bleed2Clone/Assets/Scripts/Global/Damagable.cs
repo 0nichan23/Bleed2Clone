@@ -42,18 +42,20 @@ public class Damagable : MonoBehaviour
         //death
         if (currentHp <= 0)
         {
-            if (GetComponent<PlayerController>() != null)
+            if (GetComponent<PlayerController>() != null && !Dead)
             {
+                Dead = true;
                 AudioManager.instance.PlaySFX(audioSource, SFX_Type.playerDeath);
-                yield return new WaitForSeconds(audioSource.clip.length);
+                //yield return new WaitForSeconds(audioSource.clip.length);
                 deathGFX.SetActive(true);
                 gfxTransform.gameObject.SetActive(false);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.5f);
                 transform.position = new Vector2(PlayerPrefs.GetFloat("saveX"), PlayerPrefs.GetFloat("saveY"));
+                Dead = false;
                 deathGFX.SetActive(false);
                 gfxTransform.gameObject.SetActive(true);
             }
-            else
+            else if(GetComponent<PlayerController>() == null)
             {
                 gameObject.SetActive(false);
             }

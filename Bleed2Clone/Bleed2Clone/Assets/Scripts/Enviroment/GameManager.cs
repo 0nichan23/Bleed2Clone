@@ -37,7 +37,7 @@ public sealed class GameManager : MonoBehaviour
     public void EndGame()
     {
         Time.timeScale = 0;
-        joystickCanvas?.SetActive(false);
+        if(joystickCanvas != null) joystickCanvas.SetActive(false);
         EndGamePrefab?.SetActive(true);
 
         if (wonTheGame)
