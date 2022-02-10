@@ -5,6 +5,7 @@ using UnityEngine;
 public class Damagable : MonoBehaviour
 {
     [SerializeField] float maxHp;
+    internal bool Dead;
     private float currentHp;
 
     [Header("Hit Effect")]
@@ -45,8 +46,6 @@ public class Damagable : MonoBehaviour
             }
             else
             {
-                AudioManager.instance.PlaySFX(audioSource, SFX_Type.enemyDeath);
-                yield return new WaitForSeconds(audioSource.clip.length);
                 gameObject.SetActive(false);
             }
         }
@@ -54,9 +53,8 @@ public class Damagable : MonoBehaviour
         {
             StartCoroutine(DoEffect());
         }
-
+        yield return null;
     }
-
     public float GetCurrentHP()
     {
         return currentHp;
