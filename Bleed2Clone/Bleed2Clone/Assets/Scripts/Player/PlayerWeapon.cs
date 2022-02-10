@@ -76,7 +76,8 @@ public class PlayerWeapon : MonoBehaviour
     private void Update()
     {
         EnemiesInMeleeRange = Physics2D.OverlapCircleAll(transform.position, MeleeModeRange, EnemyLayer).ToList();
-        
+        List<Collider2D> query = (List<Collider2D>)(from enemy in EnemiesInMeleeRange select enemy.isTrigger == false);
+        EnemiesInMeleeRange = query;
 
         if (!playerController.usePCControls)
         {
@@ -161,7 +162,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             knifeSliceGFX.transform.position = EnemiesInMeleeRange[0].transform.position;
             float gfxAngle = Vector2.SignedAngle(Vector2.up, (transform.position - EnemiesInMeleeRange[0].transform.position));
-            knifeSliceGFX.transform.rotation = Quaternion.Euler(0, 0, gfxAngle-90f);
+            knifeSliceGFX.transform.rotation = Quaternion.Euler(0, 0, gfxAngle - 90f);
             knifeSliceGFX.SetActive(false);
             knifeSliceGFX.SetActive(true);
         }
