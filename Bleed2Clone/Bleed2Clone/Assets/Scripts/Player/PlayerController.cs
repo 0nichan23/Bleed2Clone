@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     float lastJump;
 
     [Header("Dash")]
+    [SerializeField] private GameObject dashParticles;
     private int dashesLeft;
     public float Dashspeed;
     public float DashForce;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         jumpsLeft = ExtraJumps;
+        dashParticles.transform.parent = null;
 
         // first save
         PlayerPrefs.SetFloat("saveX", transform.position.x);
@@ -123,11 +125,21 @@ public class PlayerController : MonoBehaviour
 
         dashesLeft--;
         isDashing = true;
+
+
+
+
         rb.velocity = new Vector2(MoveInput, MoveInputVer);
         Vector2 direction = new Vector2(MoveInput, MoveInputVer);
         rb.AddForce(direction * DashForce, ForceMode2D.Impulse);
         float gravity = rb.gravityScale;
         rb.gravityScale = 0;
+
+        dashParticles.SetActive(false);
+        dashParticles.transform.position = transform.position + new Vector3(direction.x, direction.y) * 1.25f;
+        dashParticles.transform.rotation = Quaternion.Euler(new Vector3(0,0, Vector2.SignedAngle(Vector2.up, -direction)));
+        dashParticles.SetActive(true);
+
         yield return new WaitForSeconds(DashDuration);
         isDashing = false;
         rb.gravityScale = gravity;
