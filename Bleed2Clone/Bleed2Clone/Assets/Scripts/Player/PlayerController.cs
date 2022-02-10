@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     float lastJump;
 
     [Header("Dash")]
+    private int dashesLeft;
     public float Dashspeed;
     public float DashForce;
     public float DashCd;
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             jumpsLeft = ExtraJumps;
+            dashesLeft = 1;
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -106,7 +108,7 @@ public class PlayerController : MonoBehaviour
     }
     void CheckIfCanDash()
     {
-        if (Time.time - lastDash <= DashCd)
+        if (Time.time - lastDash <= DashCd || isGrounded || dashesLeft < 1)
         {
             return;
         }
@@ -116,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
+        dashesLeft--;
         isDashing = true;
         rb.velocity = new Vector2(MoveInput, MoveInputVer);
         Vector2 direction = new Vector2(MoveInput, MoveInputVer);

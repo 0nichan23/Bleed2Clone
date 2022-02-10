@@ -10616,6 +10616,7 @@ MonoBehaviour:
   fxPos: {fileID: 1077661109}
   frontParticleColor: {r: 1, g: 1, b: 1, a: 1}
   backParticleColor: {r: 0.6392157, g: 0.7058824, b: 0.78431374, a: 1}
+  useCameraShake: 1
 --- !u!1 &2054627686
 GameObject:
   m_ObjectHideFlags: 0
@@ -10962,10 +10963,10 @@ MonoBehaviour:
   ExtraJumps: 1
   jumpsLeft: 0
   jumpCd: 0.5
-  Dashspeed: 15
+  Dashspeed: 10
   DashForce: 10
-  DashCd: 2
-  DashDuration: 0.4
+  DashCd: 0.1
+  DashDuration: 0.3
   floatingJoystick: {fileID: 0}
   usePCControls: 1
 --- !u!70 &5177856170169555705
@@ -11046,6 +11047,8 @@ MonoBehaviour:
   - {fileID: -1901201251066439533, guid: 9747ccccc098ad7478268f90e06dff2f, type: 3}
   anim: {fileID: 1364905933}
   shootJoystick: {fileID: 0}
+  playerController: {fileID: 0}
+  boolshit: 0
 --- !u!114 &2668187310168951583
 MonoBehaviour:
   m_ObjectHideFlags: 0

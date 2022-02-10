@@ -12,7 +12,7 @@ public class SnowStepFX : MonoBehaviour
     [SerializeField] private Transform fxPos;
     [SerializeField] private Color frontParticleColor;
     [SerializeField] private Color backParticleColor;
-    [SerializeField] private bool useCameraShake;
+    [SerializeField] private bool useCameraShake = true;
     private bool particleColorSwitch; //A constantly changing bool that helps change the leg particle's color
     private bool isRunning;
     private bool isFlipped;
