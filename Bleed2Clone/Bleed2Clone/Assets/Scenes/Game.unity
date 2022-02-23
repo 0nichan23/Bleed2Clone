@@ -116329,6 +116329,12 @@ Transform:
   m_Father: {fileID: 511958598}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1904587091 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 120720429222550878, guid: bbc8438ea21054f4ead0daad5779c6ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1952494572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1907629442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8290900821034523718, guid: dfb9d1daf300a5a4998704154ed11abe,
@@ -117525,6 +117531,10 @@ PrefabInstance:
       propertyPath: slowtimeVolume
       value: 
       objectReference: {fileID: 1284289168}
+    - target: {fileID: 418060618, guid: dee79520549eedc47a4208b89f79e978, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1904587091}
     - target: {fileID: 418060618, guid: dee79520549eedc47a4208b89f79e978, type: 3}
       propertyPath: knifeGFX
       value: 
