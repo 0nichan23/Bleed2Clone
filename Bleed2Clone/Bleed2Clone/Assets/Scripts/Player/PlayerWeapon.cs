@@ -46,22 +46,9 @@ public class PlayerWeapon : MonoBehaviour
     private ObjectPool pool;
 
     private Vector3 moveVector;
-    internal Vector2 shootVector
-    {
-        get
-        {
-            if (playerController.usePCControls)
-            {
-                return (Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position).normalized;
-            }
-            else
-            {
-                return (Vector2.up * moveJoystick.Vertical - Vector2.left * moveJoystick.Horizontal);
-            }
-        }
-    }
+    [SerializeField] private Camera cam;
+    internal Vector2 shootVector => (cam.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position).normalized;
     #endregion
-    internal Vector2 _shootVector;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -78,7 +65,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Update()
     {
         Vector3 mPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
-        Vector3 difference = Camera.main.ScreenToWorldPoint(mPos) - transform.position;
+        Vector3 difference = cam.ScreenToWorldPoint(mPos) - transform.position;
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
@@ -97,7 +84,6 @@ public class PlayerWeapon : MonoBehaviour
             if (moveJoystick.Horizontal != 0 || moveJoystick.Vertical != 0)
             {
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, shootVector);
-
             }
         }
         else
