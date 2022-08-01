@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FlyingEnemy33x46_100ms_5: -8745408865209709200
+      FlyingEnemy33x46_100ms_4: 91490042442697396
+      FlyingEnemy33x46_100ms_0: 8940267185097328647
+      FlyingEnemy33x46_100ms_3: -5063379937216999779
+      FlyingEnemy33x46_100ms_2: 5263932793951730680
+      FlyingEnemy33x46_100ms_1: -1076977886238065172
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

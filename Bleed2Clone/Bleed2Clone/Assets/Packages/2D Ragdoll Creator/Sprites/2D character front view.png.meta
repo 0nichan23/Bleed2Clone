@@ -63,6 +63,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -412,6 +413,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      thigh 1: 21300016
+      upper arm 1: 21300000
+      wrist 2: 21300018
+      lower arm 1: 21300006
+      leg 2: 21300020
+      head: 21300002
+      lower arm 2: 21300024
+      leg 1: 21300022
+      wrist 1: 21300010
+      thigh 2: 21300012
+      upper arm 2: 21300004
+      neck: 21300008
+      body: 21300014
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

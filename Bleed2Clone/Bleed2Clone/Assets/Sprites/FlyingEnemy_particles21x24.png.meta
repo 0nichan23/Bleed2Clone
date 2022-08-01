@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FlyingEnemy_particles21x24_2: 2099562185493074737
+      FlyingEnemy_particles21x24_3: 2150614780225859281
+      FlyingEnemy_particles21x24_1: -5978016077895538165
+      FlyingEnemy_particles21x24_0: 3188369488878575240
+      FlyingEnemy_particles21x24_4: -3203039642455573459
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Player_MeleeAttack_30x56_100ms_0: -8443562974341461291
+      Player_MeleeAttack_30x56_100ms_2: -6835366832357263387
+      Player_MeleeAttack_30x56_100ms_4: 976883447758348339
+      Player_MeleeAttack_30x56_100ms_1: -3459052669816916825
+      Player_MeleeAttack_30x56_100ms_3: 3906055436266699000
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

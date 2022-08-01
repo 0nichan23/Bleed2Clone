@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -406,6 +407,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Placeholder_MC_Spritesheet_44x48withpadding_0: 3983714926341877787
+      Placeholder_MC_Spritesheet_44x48withpadding_4: 4748533467293641729
+      Placeholder_MC_Spritesheet_44x48withpadding_6: -1383045301660271322
+      Placeholder_MC_Spritesheet_44x48withpadding_3: -6839541389171713408
+      Placeholder_MC_Spritesheet_44x48withpadding_8: 5477841938053337645
+      Placeholder_MC_Spritesheet_44x48withpadding_2: 5081564927717853064
+      Placeholder_MC_Spritesheet_44x48withpadding_1: -88215110369859326
+      Placeholder_MC_Spritesheet_44x48withpadding_7: 4533931918982983387
+      Placeholder_MC_Spritesheet_44x48withpadding_5: 7811656293805700861
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

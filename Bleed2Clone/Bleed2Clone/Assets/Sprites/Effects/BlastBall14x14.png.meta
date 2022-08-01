@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BlastBall14x14_2: -8370884481599528361
+      BlastBall14x14_5: 7154855474207510416
+      BlastBall14x14_0: 2580313530944617508
+      BlastBall14x14_4: 3877200643979337151
+      BlastBall14x14_1: 574186836416289503
+      BlastBall14x14_3: 8116066164781040099
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
